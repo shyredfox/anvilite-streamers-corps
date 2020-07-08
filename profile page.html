@@ -1,0 +1,79 @@
+<div class="broadcaster-profile">
+<div class="row">
+<div class="profile1 col-sm-5">	{% if variables.person_name is defined %}
+		<dt>person name</dt>
+		<dd> {{ variables.person_name}} </dd>
+	{% endif %}
+	{% if variables.timezone is defined %}
+		<dt>Timezone</dt>
+		<dd> {{ variables.timezone}} </dd>
+	{% endif %}
+	{% if variables.world_anvil_name is defined %}
+		<dt>World Anvil Name</dt>
+		<dd> {{ variables.world_anvil_name}} </dd>
+	{% endif %}
+	{% if variables.short_bio is defined %}
+		<dt>Short Bio</dt>
+		<dd> {{ variables.short_bio}} </dd>
+	{% endif %}
+	{% if variables.topic_main is defined %}
+		<dt>Topic Main</dt>
+		<dd> {{ variables.topic_main}} </dd>
+	{% endif %}
+	{% if variables.topics_other is defined %}
+		<dt>Topics Other</dt>
+		<dd> {{ variables.topics_other}} </dd>
+	{% endif %}
+	{% if variables.discordid is defined %}
+		<dt>DiscordID</dt>
+		<dd> {{ variables.discordid}} </dd>
+	{% endif %}
+</div>
+  <div class="profile2 col-sm-5">
+	{% if variables.twitch_channel is defined %}
+		<dt>Twitch Channel</dt>
+		<dd> {{ variables.twitch_channel}} </dd>
+	{% endif %}
+	{% if variables.youtube_channel is defined %}
+		<dt>YouTube Channel</dt>
+		<dd> {{ variables.youtube_channel}} </dd>
+	{% endif %}
+	{% if variables.other_chanel is defined %}
+		<dt>Other Chanel</dt>
+		<dd> {{ variables.other_chanel}} </dd>
+	{% endif %}
+	{% if variables.discord_invite is defined %}
+		<dt>Discord Invite</dt>
+		<dd> {{ variables.discord_invite}} </dd>
+	{% endif %}
+	{% if variables.website_1 is defined %}
+		<dt>Website 1</dt>
+		<dd> {{ variables.website_1}} </dd>
+	{% endif %}
+	{% if variables.website_2 is defined %}
+		<dt>WEBSITE 2</dt>
+		<dd> {{ variables.website_2}} </dd>
+	{% endif %}
+	{% if variables.merchandise_link_1 is defined %}
+		<dt>Merchandise Link 1</dt>
+		<dd> {{ variables.merchandise_link_1}} </dd>
+	{% endif %}
+	{% if variables.merchandise_link_2 is defined %}
+		<dt>Merchandise link 2</dt>
+		<dd> {{ variables.merchandise_link_2}} </dd>
+	{% endif %}
+</div>
+<div class="profile3 col-sm-2">
+		{% if variables.profile_image is defined %}
+			<div> [img:{{ variables.profile_image }}|nolink] </div>
+		{% endif %}
+		
+		Member badge here
+</div>
+</div>
+	{% if variables.google_calendar_link is defined %}
+		<dt>Google Calendar Link</dt>
+		<dd> {{ variables.google_calendar_link}} </dd>
+<iframe src="{{ variables.google_calendar_link}}" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+	{% endif %}
+</div>
