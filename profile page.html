@@ -71,9 +71,10 @@
 		Member badge here
 </div>
 </div>
+        {# ---------- Use split to allow display in any time zone? -------------------- #}
 	{% if variables.google_calendar_link is defined %}
 		<dt>Google Calendar Link</dt>
-		<dd> {{ variables.google_calendar_link}} </dd>
-<iframe src="{{ variables.google_calendar_link}}" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+		{# <dd> {{ variables.google_calendar_link}} </dd> #}
+<iframe class="broadcast-cal" src="{{ variables.google_calendar_link}}&mode=WEEK&amp;showCalendars=0&amp;showTitle=0" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 	{% endif %}
 </div>
