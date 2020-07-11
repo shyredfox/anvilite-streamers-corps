@@ -1,66 +1,52 @@
 <div class="broadcaster-profile">
+        {% if variables.person_name is defined %}
+                 <h2> {{ variables.person_name}} </h2>
+	{% endif %}
 <div class="row">
-<div class="profile1 col-sm-5">	{% if variables.person_name is defined %}
-		<dt>person name</dt>
-		<dd> {{ variables.person_name}} </dd>
-	{% endif %}
-	{% if variables.timezone is defined %}
-		<dt>Timezone</dt>
-		<dd> {{ variables.timezone}} </dd>
-	{% endif %}
-	{% if variables.world_anvil_name is defined %}
-		<dt>World Anvil Name</dt>
-		<dd> {{ variables.world_anvil_name}} </dd>
-	{% endif %}
+<div class="profile1 col-sm-5">	
 	{% if variables.short_bio is defined %}
 		<dt>Short Bio</dt>
 		<dd> {{ variables.short_bio}} </dd>
 	{% endif %}
+</div>
+  <div class="profile2 col-sm-5">
 	{% if variables.topic_main is defined %}
-		<dt>Topic Main</dt>
-		<dd> {{ variables.topic_main}} </dd>
-	{% endif %}
-	{% if variables.topics_other is defined %}
-		<dt>Topics Other</dt>
+		<dt>Topics</dt>
+		<dd> <span class="main-topic">{{ variables.topic_main}}</span> </dd>
+	{% endif %}{% if variables.topics_other is defined %}
 		<dd> {{ variables.topics_other}} </dd>
 	{% endif %}
 	{% if variables.discordid is defined %}
 		<dt>DiscordID</dt>
 		<dd> {{ variables.discordid}} </dd>
 	{% endif %}
-</div>
-  <div class="profile2 col-sm-5">
 	{% if variables.twitch_channel is defined %}
-		<dt>Twitch Channel</dt>
-		<dd> {{ variables.twitch_channel}} </dd>
-	{% endif %}
-	{% if variables.youtube_channel is defined %}
-		<dt>YouTube Channel</dt>
-		<dd> {{ variables.youtube_channel}} </dd>
+		<dt>Streaming and Broadcasting Channels</dt>
+<a href="{{ variables.twitch_channel}}"><img src="https://www.worldanvil.com/uploads/images/c446badd51e6dc7b0ce7b7921f34e6a4.png" alt="Twitch" width="20" height="20"></a>
+	{% endif %}{% if variables.youtube_channel is defined %}
+                <a href="{{ variables.youtube_channel}}"><img src="https://www.worldanvil.com/uploads/images/1f3affbda93279061f59c16410fc7011.png" alt="Youtube" width="20" height="20"></a>
 	{% endif %}
 	{% if variables.other_chanel is defined %}
-		<dt>Other Chanel</dt>
+		<dt>Other Channel</dt>
 		<dd> {{ variables.other_chanel}} </dd>
 	{% endif %}
 	{% if variables.discord_invite is defined %}
-		<dt>Discord Invite</dt>
-		<dd> {{ variables.discord_invite}} </dd>
+		<dt>Communities</dt>
+<a href="{{ variables.discord_invite}}"><img src="https://www.worldanvil.com/uploads/images/d0ebaff439f74575b1ab0d5504f5c070.png" alt="Youtube" width="20" height="20"></a>
 	{% endif %}
 	{% if variables.website_1 is defined %}
-		<dt>Website 1</dt>
-		<dd> {{ variables.website_1}} </dd>
+		<dt>Website</dt>
+<a href="{{ variables.website_1}}">{{ variables.website_1}} </a>
 	{% endif %}
-	{% if variables.website_2 is defined %}
-		<dt>WEBSITE 2</dt>
-		<dd> {{ variables.website_2}} </dd>
+        {% if variables.website_2 is defined %}
+<a href="{{ variables.website_2}}">{{ variables.website_2}} </a>
 	{% endif %}
 	{% if variables.merchandise_link_1 is defined %}
-		<dt>Merchandise Link 1</dt>
-		<dd> {{ variables.merchandise_link_1}} </dd>
+		<dt>Merchandise</dt>
+<a href="{{ variables.merchandise_link_1}} ">{{ variables.merchandise_link_1}} </a>
 	{% endif %}
 	{% if variables.merchandise_link_2 is defined %}
-		<dt>Merchandise link 2</dt>
-		<dd> {{ variables.merchandise_link_2}} </dd>
+<a href="{{ variables.merchandise_link_2}} ">{{ variables.merchandise_link_2}} </a>
 	{% endif %}
 </div>
 <div class="profile3 col-sm-2">
@@ -75,6 +61,11 @@
 	{% if variables.google_calendar_link is defined %}
 		<dt>Google Calendar Link</dt>
 		{# <dd> {{ variables.google_calendar_link}} </dd> #}
+UTC: -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 +1 +2 +3 +4 +5 +6 +7 +8 +9 +10 +11
+<br/><br/>
+	{% if variables.timezone is defined %}
+		<dt>Timezone: {{ variables.timezone}} </dt>
+	{% endif %}
 <iframe class="broadcast-cal" src="{{ variables.google_calendar_link}}&mode=WEEK&amp;showCalendars=0&amp;showTitle=0" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 	{% endif %}
 </div>
