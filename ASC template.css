@@ -39,6 +39,7 @@
 	--Graphite: #616161 ;
 	--Birch: #a79b8e ;
 	
+
 	/* spacing, width, border radius etc */
 	--color-box-size: 1em;
 	--color-box-marg: .25em;
@@ -136,4 +137,10 @@ Ademal's grid column hack - gifted in Discord server
 /* space after key value pairs */
 .user-css .phrase-value {
 	margin-bottom: var(--box-marg);
+}
+
+
+/* Theme changes for until we get an official theme of our own */
+#world-navigation-sidebar {
+	background: var(--ember-dark-d);
 }
