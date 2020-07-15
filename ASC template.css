@@ -1,32 +1,151 @@
 /* ==UserStyle==
-@name           wa.streamer profile
+@name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.0
-@description    A new userstyle
-@author         Me
+@version        1.0.1
+@description    CSS for the ASC Network Site
+@author         ShyRedFox 
+
+1.0.0 - google calendar color coding boxes with the offical colors from Google
+1.0.1 - Added statblock background that wasn't blinding white
 ==/UserStyle== */
+:root {
+	/* google calendar colors for streaming calendar topics */
+	--Raddicchio: #ad1457; 
+	--CherryBlossom: #d81b60;
+	--Tomato: #d50000;
+	--Flamingo: #e67c73 ;
 
-.user-css .statblock { /* might need to change this .statblock might be too far reaching */
-	border: 0;
-	background: none;
+	--Tangerine: #f4511e ;
+	--Pumpkin: #ef6c00 ;
+	--Mango: #f09300 ;
+	--Banana: #f6bf26 ;
+
+	--Citron: #e4c441 ;
+	--Avocado: #c0ca33 ;
+	--Pistachio: #7cb342 ;
+	--Sage: #33b679 ;
+
+	--Basil: #0b8043 ;
+	--Eucalyptus: #009688 ;
+	--Peacock: #039be5 ;
+	--Cobalt: #4285f4 ;
+
+	--Blueberry: #3f51b5 ;
+	--Lavender: #7986cb ;
+	--Wysteria: #b39ddb ;
+	--Amethyst: #9e69af ;
+
+	--Grape: #8e24aa ;
+	--Cocoa: #795548 ;
+	--Graphite: #616161 ;
+	--Birch: #a79b8e ;
+	
+
+	/* spacing, width, border radius etc */
+	--color-box-size: 1em;
+	--color-box-marg: .25em;
+	--color-box-radius:.25em;
+	--white: #ddd;
+	--whitet: #dddddd90;
+	--box-radius: 10px;
+	--box-marg: 10px;
+	--black: #222;
 }
 
-.main-topic {
-	font-weight: 800;
-	background: #7a0000;
+/*  ---------------------------------
+Ademal's grid column hack - gifted in Discord server
+-------------------------------- */
+/*Contain-Grid*/
+ @media only screen and (min-width: 960px){
+    .contain-grid{
+        display: grid;
+        grid-gap: 20px;
+        grid-auto-rows: minmax(0px, auto) ;
+    }
+	.contain-grid-cal-color{
+        display: grid;
+        grid-gap: .1em;
+        grid-auto-rows: minmax(0px, auto) ;
+    }
+    .contain-grid-col-5 {
+        grid-template-columns: repeat(5, 1fr) ;
+    }
+    .contain-grid-col-4 {
+        grid-template-columns: repeat(4, 1fr) ;
+    }
+    .contain-grid-col-3 {
+        grid-template-columns: repeat(3, 1fr) ;
+    }
+    .contain-grid-col-2 {
+        grid-template-columns: repeat(2, 1fr) ;
+    }
 }
 
-.broadcaster-proile dd {
-	text-indent: 0em; 
-	margin-left: 10px;
+/* .box : fake class just so I ahve a name to pur in the conatiner code tags */
+
+/* Box to highlight items */
+.HLBox {
+    border-radius: var(--box-radius);
+    padding: var(--box-marg);
+    background: var(--whitet);
+	margin: var(--box-marg);
+	color: var(--black);
 }
 
-.asc-logo {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+/* calendar colors - key */
+.cal-color-box {/*box that holds the calendar color key list */
+	display: inline-block; 
+	width: var(--color-box-size);
+	height: var(--color-box-size);
+	margin-left: var(--color-box-marg);
+	margin-right: var(--color-box-marg);
+	border: 1.5px solid var(--white);
+	color: var(--white);
+	border-radius: var(--color-box-radius);
 }
 
-.bbox {
-	margin: 14px;
+
+.Raddicchio { background: var(--Raddicchio)}
+.CherryBlossom { background: var(--CherryBlossom)}
+.Tomato { background: var(--Tomato)}
+.Flamingo { background: var(--Flamingo)}
+
+.Tangerine { background: var(--Tangerine)}
+.Pumpkin { background: var(--Pumpkin)}
+.Mango { background: var(--Mango)}
+.Banana { background: var(--Banana)}
+
+.Citron { background: var(--Citron)}
+.Avocado { background: var(--Avocado)}
+.Pistachio { background: var(--Pistachio)}
+.Sage { background: var(--Sage)}
+
+.Basil { background: var(--Basil)}
+.Eucalyptus { background: var(--Eucalyptus)}
+.Peacock { background: var(--Peacock)}
+.Cobalt { background: var(--Cobalt)}
+
+.Blueberry { background: var(--Blueberry)}
+.Lavender { background: var(--Lavender)}
+.Wysteria { background: var(--Wysteria)}
+.Amethyst { background: var(--Amethyst)}
+
+.Grape { background: var(--Grape)}
+.Cocoa { background: var(--Cocoa)}
+.Graphite{ background: var(--Graphite)}
+.Birch { background: var(--Birch)}
+
+/* space after key value pairs */
+.user-css .phrase-value {
+	margin-bottom: var(--box-marg);
+}
+
+
+/* Theme changes for until we get an official theme of our own */
+.user-css .statblock {
+	background: var(--ember-dark);
+}
+
+#world-navigation-sidebar {
+	background: var(--ember-dark-d);
 }
