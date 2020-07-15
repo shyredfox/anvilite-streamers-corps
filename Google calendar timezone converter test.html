@@ -1,23 +1,11 @@
 <div>
 	<h1>{{ variables.name }}</h1>
-	{% if variables.name is defined %}
-		<dt>Name</dt>
-		<dd> {{ variables.name}} </dd>
-	{% endif %}
-	{% if variables.google_calendar_url is defined %}
-		<dt>Google Calendar URL</dt>
-		<dd> {{ variables.google_calendar_url}} </dd>
-	{% endif %}
 	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
 	{% set url_minus_tz = variables.google_calendar_url|split('&') %}
-	: {{ url_minus_tz[0] }}
-</div>
-
-<div>
+	
 	<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
-	<h1>Calendar String Conversions</h1>
 	<!-- UTC -->
-	{% set url_UTC = url_minus_tz[0]~'&ctz=Etc%2FGMT' %}
+	{% set utc = url_minus_tz[0]~'&ctz=Etc%2FGMT' %}
 	<!-- UTC+1 -->
 	{% set utc_p1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (minus) in the URL creation #}
 	<!-- UTC+2 -->
@@ -40,6 +28,8 @@
 	{% set utc_p10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D10' %} 
 	<!-- UTC+11 -->
 	{% set utc_p11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D11' %} 
+	<!-- UTC+12 -->
+	{% set utc_p12 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D12' %} 
 	<!-- UTC-1 -->
 	{% set utc_m1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
 	<!-- UTC-2 -->
@@ -50,7 +40,6 @@
 	{% set utc_m4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B4' %} 
 	<!-- UTC-5 -->
 	{% set utc_m5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B5' %} 
-	UTC-5: {{ utc_m5 }}
 	<!-- UTC-6 -->
 	{% set utc_m6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B6' %} 
 	<!-- UTC-7 -->
@@ -67,23 +56,87 @@
 	<br>
 	<h1>Calendars</h1>
 	UTC<br>
-	<iframe src="{{ url_UTC }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br>
+	<iframe src="{{ variables.google_calendar_url }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br>
 	<br>
-	<p>Click on the button to toggle between showing and hiding content.</p>
+	<p>Click on the button to open a new tab with the calendar in your timezone. 
+	<br>
+	(If you're not sure what your UTC offset is, use <a href="https://www.timeanddate.com/worldclock/timezone/utc"  target="_blank">this converter</a>. Under the green box there is a link to set your location. If the blue box says UTC is ahead of your time by X hours you are UTC-X. If it says UTC is behind your time by X hours you are UTC+X. Remember the switch to and from daylight savings time changes the offset.)</p>
 	<!-- DISPLAY THE CALENDARS -->
-	<!-- UTC-11 -->
+		<!-- UTC-11 -->
 	<div class="cal-collapse">
-		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#utc-11">UTC-11</button>
-		<div id="utc-11" class="collapse">
-			UTC-11<br>
-			<iframe src="{{ utc_m11 }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-		</div>
-	
+		<!-- UTC-11 -->
+		<a href="{{ utc_m11 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-11</a>
+		
+		<!-- UTC-10 -->
+		<a href="{{ utc_m10 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-10</a>
+		
+		<!-- UTC-9 -->
+		<a href="{{ utc_m9 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-9</a>
+		
+		<!-- UTC-8 -->
+		<a href="{{ utc_m8 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-8</a>
+		
+		<!-- UTC-7 -->
+		<a href="{{ utc_m7 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-7</a>
+		
+		<!-- UTC-6 -->
+		<a href="{{ utc_m6 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-6</a>
+		
 		<!-- UTC-5 -->
-		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#utc-5">UTC-5</button>
-		<div id="utc-5" class="collapse">
-			UTC-5<br>
-			<iframe src="{{ utc_m5 }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-		</div>
+		<a href="{{ utc_m5 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-5</a>
+	
+		<!-- UTC-4 -->
+		<a href="{{ utc_m4 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-4</a>
+		
+		<!-- UTC-3 -->
+		<a href="{{ utc_m3 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-3</a>
+		
+		<!-- UTC-2 -->
+		<a href="{{ utc_m2 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-2</a>
+		
+		<!-- UTC-1 -->
+		<a href="{{ utc_m1 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC-1</a>
+	
+		<!-- UTC -->
+		<a href="{{ utc }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC</a>
+	</div>
+	<br>
+	<!-- Next row of buttons -->
+	<div>
+		<!-- UTC+1 -->
+		<a href="{{ utc_p1 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+1</a>
+		
+		<!-- UTC+2 -->
+		<a href="{{ utc_p2 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+2</a>
+		
+		<!-- UTC+3 -->
+		<a href="{{ utc_p3 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+3</a>
+		
+		<!-- UTC+4 -->
+		<a href="{{ utc_p4 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+4</a>
+		
+		<!-- UTC+5 -->
+		<a href="{{ utc_p5 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+5</a>
+		
+		<!-- UTC+6 -->
+		<a href="{{ utc_p6 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+6</a>
+		
+		<!-- UTC+7 -->
+		<a href="{{ utc_p7 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+7</a>
+		
+		<!-- UTC+8 -->
+		<a href="{{ utc_p8 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+8</a>
+		
+		<!-- UTC+9 -->
+		<a href="{{ utc_p9 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+9</a>
+		
+		<!-- UTC+10 -->
+		<a href="{{ utc_p10 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+10</a>
+		
+		<!-- UTC+11 -->
+		<a href="{{ utc_p11 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+11</a>
+		
+		<!-- UTC+12 -->
+		<a href="{{ utc_p12 }}&amp;mode=WEEK"class="btn btn-info" role="button" aria-disabled="true" target="_blank">UTC+12</a>
 	</div>
 </div>
