@@ -1,24 +1,26 @@
 <div class="broadcaster-profile">
-	<!-- -------------NAME ------------- -->
-    {% if variables.person_name is defined %}
-		<h2> {{ variables.person_name}} </h2>
-	{% endif %}
-
 <div class="row">
-	<div class="broadcast-bio profile-col bbox col-sm-5">
-		<!-- -------------BIO------------- -->
-		{% if variables.short_bio is defined %}
-			<h4>Short Bio</h4>
-			<dd> {{ variables.short_bio}} </dd>
-		{% endif %}
-	</div>
-	<div class="profile-col col-sm-4">
-		<!-- -------------TOPICS AND SOCIAL MEDIA------------- -->
+	<div class="broadcast-bio profile-col col-sm-5">
+		<!-- -------------BROADCASTING iNFO------------- -->
 		<div class="broadcast-topics bbox">
 		{% if variables.topic_main is defined %}
-			<h4>Topics I Cover</h4>
+			<h4>Broadcast Topics</h4>
 			<dd> <span class="main-topic">{{ variables.topic_main}}</span>{% if variables.topics_other_worldbuilding is defined %}, {{ variables.topics_other_worldbuilding}} </dd>
 			{% endif %}
+		{% endif %}</div>
+		<div class="broadcast-info bbox">
+		{% if variables.broadcasting_info is defined %}
+			<h4>Channel Summary</H4>
+			<dd> {{ variables.broadcasting_info}} </dd>
+		{% endif %}</div>
+	</div>
+	<div class="profile-col col-sm-4">
+		<!-- -------------SOCIAL MEDIA------------- -->
+		<!-- -------------NAMEs ------------- -->
+		<div class="broadcast-names bbox">
+		{% if variables.also_known_as is defined %}
+			<h4>Also Known As</h4>
+			{{ variables.also_known_as}}
 		{% endif %}</div>
 		<div class="broadcast-discord-id bbox">
 		{% if variables.discordid is defined %}

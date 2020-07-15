@@ -1,0 +1,84 @@
+<div>
+	<h1>{{ variables.name }}</h1>
+	{% if variables.name is defined %}
+		<dt>Name</dt>
+		<dd> {{ variables.name}} </dd>
+	{% endif %}
+	{% if variables.google_calendar_url is defined %}
+		<dt>Google Calendar URL</dt>
+		<dd> {{ variables.google_calendar_url}} </dd>
+	{% endif %}
+	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
+	{% set url_minus_tz = variables.google_calendar_url|split('&') %}
+	: {{ url_minus_tz[0] }}
+</div>
+
+<div>
+	<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
+	<h1>Calendar String Conversions</h1>
+	<!-- UTC -->
+	{% set url_UTC = url_wout_tz[0]~'&ctz=UTC' %}
+	<!-- UTC+1 -->
+	{% set utc_p1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (minus) in the URL creation #}
+	<!-- UTC+2 -->
+	{% set utc_p2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D2' %} 
+	<!-- UTC+3 -->
+	{% set utc_p3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D3' %} 
+	<!-- UTC+4 -->
+	{% set utc_p4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D4' %} 
+	<!-- UTC+5 -->
+	{% set utc_p5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D5' %} 
+	<!-- UTC+6 -->
+	{% set utc_p6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D6' %} 
+	<!-- UTC+7 -->
+	{% set utc_p7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D7' %} 
+	<!-- UTC+8 -->
+	{% set utc_p8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D8' %} 
+	<!-- UTC+9 -->
+	{% set utc_p9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D9' %} 
+	<!-- UTC+10 -->
+	{% set utc_p10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D10' %} 
+	<!-- UTC+11 -->
+	{% set utc_p11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D11' %} 
+	<!-- UTC+12 -->
+	{% set utc_p12 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D12' %} 
+	<!-- UTC-1 -->
+	{% set utc_m1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
+	<!-- UTC-2 -->
+	{% set utc_m2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B2' %} 
+	<!-- UTC-3 -->
+	{% set utc_m3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B3' %} 
+	<!-- UTC-4 -->
+	{% set utc_m4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B4' %} 
+	<!-- UTC-5 -->
+	{% set utc_m5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B5' %} 
+	UTC-5: {{ utc_m5 }}
+	<!-- UTC-6 -->
+	{% set utc_m6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B6' %} 
+	<!-- UTC-7 -->
+	{% set utc_m7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B7' %} 
+	<!-- UTC-8 -->
+	{% set utc_m8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B8' %} 
+	<!-- UTC-9 -->
+	{% set utc_m9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B9' %}
+	<!-- UTC-10 -->
+	{% set utc_m10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B10' %}
+	<!-- UTC-11 -->
+	{% set utc_m11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B11' %}
+	<br>
+	<br>
+	<h1>Calendars</h1>
+	CDT<br>
+	<iframe src="{{ variables.google_calendar_url }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe><br>
+	<br>
+	<p>Click on the button to toggle between showing and hiding content.</p>
+	<!-- DISPLAY THE CALENDARS -->
+	<!-- UTC-5 -->
+	<div class="cal-collapse">
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#utc-5">UTC-5</button>
+		<div id="utc-5" class="collapse">
+			UTC-5<br>
+			<iframe src="{{ utc_m5 }}&amp;mode=WEEK" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+		</div>
+	</div>
+</div>
