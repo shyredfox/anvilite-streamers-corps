@@ -1,12 +1,13 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.0.2
 @description    CSS for the ASC Network Site
 @author         ShyRedFox 
 
 1.0.0 - google calendar color coding boxes with the offical colors from Google
 1.0.1 - Added statblock background that wasn't blinding white
+1.0.2 - added tweaks for the ASC Profile pages.
 ==/UserStyle== */
 :root {
 	/* google calendar colors for streaming calendar topics */
@@ -39,6 +40,9 @@
 	--Cocoa: #795548 ;
 	--Graphite: #616161 ;
 	--Birch: #a79b8e ;
+	
+	/* SRF's colors */
+	--yellow-orange:#e3ad00;
 	
 
 	/* spacing, width, border radius etc */
@@ -140,6 +144,10 @@ Ademal's grid column hack - gifted in Discord server
 	margin-bottom: var(--box-marg);
 }
 
+/*display the contents of a statblock is if it was part of the container = invisibile statblocks */
+.display-contents-statblock .statblock {
+  display: contents;
+}
 
 /* Theme changes for until we get an official theme of our own */
 .user-css .statblock {
@@ -148,4 +156,45 @@ Ademal's grid column hack - gifted in Discord server
 
 #world-navigation-sidebar {
 	background: var(--ember-dark-d);
+}
+
+
+.main-topic {
+	font-weight: 800;
+	background: #7a0000;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.broadcaster-proile dd {
+	text-indent: 0em; 
+	margin-left: 10px;
+}
+
+.asc-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bbox {
+	margin: 14px;
+}
+
+strong.phrase-key {
+	font-size: 1.2em;
+	color: var(--yellow-orange);
+}
+
+.phrase-value {
+	margin-left: 15px;
+}
+
+.profile-col {
+	border: none;
+}
+
+.user-css .btn-white {
+	background: #eee !important;
+	vertical-align: middle !important;
 }

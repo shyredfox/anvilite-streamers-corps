@@ -1,0 +1,54 @@
+/* ==UserStyle==
+@name           wa.streamer profile
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+:root{
+	--yellow-orange:#e3ad00;
+}
+.user-css .statblock { /* might need to change this .statblock might be too far reaching */
+	border: 0;
+	background: none;
+}
+
+.main-topic {
+	font-weight: 800;
+	background: #7a0000;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.broadcaster-proile dd {
+	text-indent: 0em; 
+	margin-left: 10px;
+}
+
+.asc-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bbox {
+	margin: 14px;
+}
+
+strong.phrase-key {
+	font-size: 1.2em;
+	color: var(--yellow-orange);
+}
+
+.phrase-value {
+	margin-left: 15px;
+}
+
+.profile-col {
+	border: none;
+}
+
+.user-css .btn-white {
+	background: white !important;
+}

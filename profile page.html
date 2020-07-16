@@ -1,5 +1,5 @@
 <div class="broadcaster-profile">
-<div class="row">
+<div class="row"> <!-- TOP INFO -->
 	<div class="broadcast-bio profile-col col-sm-5">
 		<!-- -------------BROADCASTING iNFO------------- -->
 		<div class="broadcast-topics bbox">
@@ -69,17 +69,116 @@
 		<div class="broadcast-asc-logo bbox">
 		<img class="asc-logo" src="https://www.worldanvil.com/uploads/images/fc8efc4e31e686f133e771bdfa0cbe1a.png" alt="ASC 	Network Logo" width="112" height="112" margin-left="auto" margin-right="auto"></div>
 	</div>
-	</div>
-	<div class="broadcast-cal-frame bbox">
-		<!-- -------------CALENDAR------------- -->
-        {# ---------- Use split to allow display in any time zone? -------------------- #}
-		{% if variables.google_calendar_link is defined %}
-			<h4>Streaming Calendar</h4>
-			UTC: -11 -10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 +1 +2 +3 +4 +5 +6 +7 +8 +9 +10 +11
-			{% if variables.timezone is defined %}
-				<dt>Timezone: {{ variables.timezone}} </dt>
-			{% endif %}
-			<iframe class="broadcast-cal" src="{{ variables.google_calendar_link}}&mode=WEEK&amp;showCalendars=0&amp;showTitle=0" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+</div><!-- END - TOP INFO -->
+	
+<!-- -------------CALENDAR------------- -->
+<div class="broadcast-cal-frame bbox">
+		
+	<!-- PARSING THE ORIGINAL STRING -->
+    {# ---------- Use split to allow display in any time zone? -------------------- #}
+	{% if variables.google_calendar_link is defined %}
+		<h4>Streaming Calendar</h4>
+		{% if variables.timezone is defined %}
+			<dt>Timezone: {{ variables.timezone}} </dt>
 		{% endif %}
-	</div>
-</div>
+			
+		<!-- DISPLAY THE ORIGINAL CALNDAR IN THE BROADCASTER'S TIMEZONE -->
+		<iframe class="broadcast-cal" src="{{ variables.google_calendar_link}}&mode=WEEK&amp;showCalendars=0&amp;showTitle=0" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+	{% endif %}
+		
+	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
+	{% set url_minus_tz = variables.google_calendar_link|split('&') %}
+	
+	<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
+	<!-- UTC -->
+	{% set utc = url_minus_tz[0]~'&ctz=Etc%2FGMT' %}
+	<!-- UTC+1 -->
+	{% set utc_p1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (minus) in the URL creation #}
+	<!-- UTC+2 -->
+	{% set utc_p2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D2' %} 
+	<!-- UTC+3 -->
+	{% set utc_p3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D3' %} 
+	<!-- UTC+4 -->
+	{% set utc_p4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D4' %} 
+	<!-- UTC+5 -->
+	{% set utc_p5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D5' %} 
+	<!-- UTC+6 -->
+	{% set utc_p6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D6' %} 
+	<!-- UTC+7 -->
+	{% set utc_p7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D7' %} 
+	<!-- UTC+8 -->
+	{% set utc_p8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D8' %} 
+	<!-- UTC+9 -->
+	{% set utc_p9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D9' %} 
+	<!-- UTC+10 -->
+	{% set utc_p10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D10' %} 
+	<!-- UTC+11 -->
+	{% set utc_p11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D11' %} 
+	<!-- UTC+12 -->
+	{% set utc_p12 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D12' %} 
+	<!-- UTC-1 -->
+	{% set utc_m1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
+	<!-- UTC-2 -->
+	{% set utc_m2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B2' %} 
+	<!-- UTC-3 -->
+	{% set utc_m3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B3' %} 
+	<!-- UTC-4 -->
+	{% set utc_m4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B4' %} 
+	<!-- UTC-5 -->
+	{% set utc_m5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B5' %} 
+	<!-- UTC-6 -->
+	{% set utc_m6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B6' %} 
+	<!-- UTC-7 -->
+	{% set utc_m7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B7' %} 
+	<!-- UTC-8 -->
+	{% set utc_m8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B8' %} 
+	<!-- UTC-9 -->
+	{% set utc_m9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B9' %}
+	<!-- UTC-10 -->
+	{% set utc_m10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B10' %}
+	<!-- UTC-11 -->
+	{% set utc_m11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B11' %}
+	
+	<br><br>
+	<!-- DISPLAY LINKS TO THE CALENDAR BY TIMEZONES -->
+	<h4>Would you like the calendar displayed in a different timezone?</h4>
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="TZ-menu">Pick Your Timezone <span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="TZ-menu">
+			<li role="presentation"><a role="menuitem" href="{{ utc_p12 }}&amp;mode=WEEK" target="_blank">UTC+12</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p11 }}&amp;mode=WEEK" target="_blank">UTC+11</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p10 }}&amp;mode=WEEK" target="_blank">UTC+10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p9 }}&amp;mode=WEEK" target="_blank">UTC+9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p8 }}&amp;mode=WEEK" target="_blank">UTC+8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p7 }}&amp;mode=WEEK" target="_blank">UTC+7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p6 }}&amp;mode=WEEK" target="_blank">UTC+6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p5 }}&amp;mode=WEEK" target="_blank">UTC+5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p4 }}&amp;mode=WEEK" target="_blank">UTC+4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p3 }}&amp;mode=WEEK" target="_blank">UTC+3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p2 }}&amp;mode=WEEK" target="_blank">UTC+2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p1 }}&amp;mode=WEEK" target="_blank">UTC+1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc }}&amp;mode=WEEK" target="_blank">UTC</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m1 }}&amp;mode=WEEK" target="_blank">UTC-1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m2 }}&amp;mode=WEEK" target="_blank">UTC-2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m3 }}&amp;mode=WEEK" target="_blank">UTC-3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m4 }}&amp;mode=WEEK" target="_blank">UTC-4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m5 }}&amp;mode=WEEK" target="_blank">UTC-5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m6 }}&amp;mode=WEEK" target="_blank">UTC-6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m7 }}&amp;mode=WEEK" target="_blank">UTC-7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m8 }}&amp;mode=WEEK" target="_blank">UTC-8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m9 }}&amp;mode=WEEK" target="_blank">UTC-9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m10 }}&amp;mode=WEEK" target="_blank">UTC-10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m11 }}&amp;mode=WEEK" target="_blank">UTC-11</a></li>
+		</ul>
+	</div> <!-- END DROPDOWN -->
+	<p>Click on the dropdown menu and click your timezone to open a new tab with a calendar converted to that timezone. 
+	<br><br>
+	*If you're not sure what your UTC offset is:</p>
+<ul>
+<li> Use <a href="https://www.timeanddate.com/worldclock/timezone/utc"  target="_blank">this converter</a>. </li>
+<li> Under the green box there is a link to set your location.  </li>
+<li> If the blue box says UTC is ahead of your time by X hours you are UTC-X.  </li>
+<li> If the blue box says UTC is behind your time by X hours you are UTC+X.  </li>
+<li> Remember the switch to and from daylight savings time changes the offset. </li>
+</ul>
+</div> <!-- END - BROADCAST CAL IFRAME + TZ MENU --></div> <!-- END - BROADCASTER PROFILE -->
