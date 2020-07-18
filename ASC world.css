@@ -1,13 +1,14 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.2
+@version        1.0.3
 @description    CSS for the ASC Network Site
 @author         ShyRedFox 
 
 1.0.0 - google calendar color coding boxes with the offical colors from Google
 1.0.1 - Added statblock background that wasn't blinding white
 1.0.2 - added tweaks for the ASC Profile pages.
+1.0.3 - added social media links box
 ==/UserStyle== */
 :root {
 	/* google calendar colors for streaming calendar topics */
@@ -197,4 +198,17 @@ strong.phrase-key {
 .user-css .btn-white {
 	background: #eee !important;
 	vertical-align: middle !important;
+}
+
+/* ASC Social media box */
+.social-media-box {
+	width: 200px;
+	position: fixed; 
+	top: 75px; 
+	right: 50px; 
+	z-index: 2;
+}
+
+.user-css li {
+	font-family: var(--f5);
 }
