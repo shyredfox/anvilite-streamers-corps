@@ -1,63 +1,62 @@
 <div class="google-multi-cal-display">
 	{% if variables.url is defined %}
-	
+
 	<!-- DISPLAY THE NETWORK CALENDAR -->
 	<h3>The ASC Network Calendar is in UTC</h3>
-	<iframe src="{{ variables.url | raw }}" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-	
+	<iframe src="{{ variables.url | raw }}" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
 	<!-- now split it by 'ctz=Etc%2FGMT' and piece back together -->
 	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
-	{% set url_minus_tz = variables.url|split('&amp;ctz=Etc%2FGMT') %}
+	{% set url_minus_tz = variables.url|split('Etc%2FGMT') %}
 	<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
 	<!-- UTC -->
-	{% set utc = url_minus_tz[0]~'&ctz=Etc%2FGMT'~url_minus_tz[1] %}
+	{% set utc = url_minus_tz[0]~'Etc%2FGMT'~url_minus_tz[1] %}
 	<!-- UTC+1 -->
-	{% set utc_p1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (as minus) in the URL creation #}
+	{% set utc_p1 = url_minus_tz[0]~'Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (as minus) in the URL creation #}
 	<!-- UTC+2 -->
-	{% set utc_p2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D2'~url_minus_tz[1] %} 
+	{% set utc_p2 = url_minus_tz[0]~'Etc%2FGMT%2D2'~url_minus_tz[1] %} 
 	<!-- UTC+3 -->
-	{% set utc_p3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D3'~url_minus_tz[1] %} 
+	{% set utc_p3 = url_minus_tz[0]~'Etc%2FGMT%2D3'~url_minus_tz[1] %} 
 	<!-- UTC+4 -->
-	{% set utc_p4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D4'~url_minus_tz[1] %} 
+	{% set utc_p4 = url_minus_tz[0]~'Etc%2FGMT%2D4'~url_minus_tz[1] %} 
 	<!-- UTC+5 -->
-	{% set utc_p5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D5'~url_minus_tz[1] %} 
+	{% set utc_p5 = url_minus_tz[0]~'Etc%2FGMT%2D5'~url_minus_tz[1] %} 
 	<!-- UTC+6 -->
-	{% set utc_p6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D6'~url_minus_tz[1] %} 
+	{% set utc_p6 = url_minus_tz[0]~'Etc%2FGMT%2D6'~url_minus_tz[1] %} 
 	<!-- UTC+7 -->
-	{% set utc_p7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D7'~url_minus_tz[1] %} 
+	{% set utc_p7 = url_minus_tz[0]~'Etc%2FGMT%2D7'~url_minus_tz[1] %} 
 	<!-- UTC+8 -->
-	{% set utc_p8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D8'~url_minus_tz[1] %} 
+	{% set utc_p8 = url_minus_tz[0]~'Etc%2FGMT%2D8'~url_minus_tz[1] %} 
 	<!-- UTC+9 -->
-	{% set utc_p9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D9'~url_minus_tz[1] %} 
+	{% set utc_p9 = url_minus_tz[0]~'Etc%2FGMT%2D9'~url_minus_tz[1] %} 
 	<!-- UTC+10 -->
-	{% set utc_p10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D10'~url_minus_tz[1] %} 
+	{% set utc_p10 = url_minus_tz[0]~'Etc%2FGMT%2D10'~url_minus_tz[1] %} 
 	<!-- UTC+11 -->
-	{% set utc_p11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D11'~url_minus_tz[1] %} 
+	{% set utc_p11 = url_minus_tz[0]~'Etc%2FGMT%2D11'~url_minus_tz[1] %} 
 	<!-- UTC+12 -->
-	{% set utc_p12 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2D12'~url_minus_tz[1] %} 
+	{% set utc_p12 = url_minus_tz[0]~'Etc%2FGMT%2D12'~url_minus_tz[1] %} 
 	<!-- UTC-1 -->
-	{% set utc_m1 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B1'~url_minus_tz[1] %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
+	{% set utc_m1 = url_minus_tz[0]~'Etc%2FGMT%2B1'~url_minus_tz[1] %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
 	<!-- UTC-2 -->
-	{% set utc_m2 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B2'~url_minus_tz[1] %} 
+	{% set utc_m2 = url_minus_tz[0]~'Etc%2FGMT%2B2'~url_minus_tz[1] %} 
 	<!-- UTC-3 -->
-	{% set utc_m3 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B3'~url_minus_tz[1] %} 
+	{% set utc_m3 = url_minus_tz[0]~'Etc%2FGMT%2B3'~url_minus_tz[1] %} 
 	<!-- UTC-4 -->
-	{% set utc_m4 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B4'~url_minus_tz[1] %} 
+	{% set utc_m4 = url_minus_tz[0]~'Etc%2FGMT%2B4'~url_minus_tz[1] %} 
 	<!-- UTC-5 -->
-	{% set utc_m5 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B5'~url_minus_tz[1] %} 
+	{% set utc_m5 = url_minus_tz[0]~'Etc%2FGMT%2B5'~url_minus_tz[1] %} 
 	<!-- UTC-6 -->
-	{% set utc_m6 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B6'~url_minus_tz[1] %} 
+	{% set utc_m6 = url_minus_tz[0]~'Etc%2FGMT%2B6'~url_minus_tz[1] %} 
 	<!-- UTC-7 -->
-	{% set utc_m7 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B7'~url_minus_tz[1] %} 
+	{% set utc_m7 = url_minus_tz[0]~'Etc%2FGMT%2B7'~url_minus_tz[1] %} 
 	<!-- UTC-8 -->
-	{% set utc_m8 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B8'~url_minus_tz[1] %} 
+	{% set utc_m8 = url_minus_tz[0]~'Etc%2FGMT%2B8'~url_minus_tz[1] %} 
 	<!-- UTC-9 -->
-	{% set utc_m9 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B9'~url_minus_tz[1] %}
+	{% set utc_m9 = url_minus_tz[0]~'Etc%2FGMT%2B9'~url_minus_tz[1] %}
 	<!-- UTC-10 -->
-	{% set utc_m10 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B10'~url_minus_tz[1] %}
+	{% set utc_m10 = url_minus_tz[0]~'Etc%2FGMT%2B10'~url_minus_tz[1] %}
 	<!-- UTC-11 -->
-	{% set utc_m11 = url_minus_tz[0]~'&ctz=Etc%2FGMT%2B11'~url_minus_tz[1] %}
-	
+	{% set utc_m11 = url_minus_tz[0]~'Etc%2FGMT%2B11'~url_minus_tz[1] %}
 	<br><br>
 	<!-- DISPLAY LINKS TO THE CALENDAR BY TIMEZONES -->
 	<h4>Would you like the calendar displayed in a different timezone?</h4>
