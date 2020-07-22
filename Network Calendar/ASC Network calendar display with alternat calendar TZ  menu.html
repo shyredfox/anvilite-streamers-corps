@@ -3,6 +3,10 @@
 
 	<!-- DISPLAY THE NETWORK CALENDAR -->
 	<h3>The ASC Network Calendar is in UTC</h3>
+     
+       <blockquote>
+*If you see "Events from one or more calendars could not be shown here because you do not have the permission to view them." - someone has set their calendar to private. We can try to hunt it down, but we can't control their calendars.<br><br>
+*If you see the calendar showing up with the wrong colors, from what I can tell this happens for some calendars if you block 3rd party cookies. I can't control that or override it with google calendar settings. And sometimes we get it set wrong because the color display and color setting are on opposite sides. Easy to pick the wrong one. Feel free to let us know. If it's set right on our end, I can't fix it. But if it is wrong on our end, we'll fix it. --ShyRedFox </blockquote>
 	<iframe src="{{ variables.url | raw }}" style="border: 0" width="100%" height="700" frameborder="0" scrolling="no"></iframe>
 
 	<!-- now split it by 'ctz=Etc%2FGMT' and piece back together -->

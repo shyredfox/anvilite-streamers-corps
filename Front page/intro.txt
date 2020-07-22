@@ -1,0 +1,55 @@
+[quote]Building worlds. Building community. Building up people.[/quote]
+
+Thanks for visiting the ASC Network! 
+
+We are a community for the World Anvilites who do internet streaming, broadcasting, podcasts, etc. - on Twitch, Youtube, and other outlets to share information, our streams, calendars, to support each other and work together.
+
+[h1]Membership is OPEN![/h1]
+(Just be aware we're still working the bugs out of the process.)
+[articleblock:d239d74d-9f11-48f6-9f93-d35e742d3bb7]/* application info */
+
+[h1]What's New on the ASC Network?[/h1]
+[articleblock:2e72eaad-41ab-4ad7-959a-ec7f41dc51e8]/* ASC News/Updates */
+
+[h1]Upcoming on the Network Site[/h1]
+[left]We're still setting things up. Here's what we're working on.
+[br]
+
+[section: fas fa-check-square] [/section] The Network calendar and how to get added to the calendar. (Much simpler, and you'll have control of your own calendar entries!)
+[br]
+[section: fas fa-check-square] [/section] Our Network code of ethics and requirements for membership (Requirements will be simple - such as be a WA member and have at least one stream/broadcast/podcast that relates to WA)
+[br]
+[section: fas fa-stopwatch] [/section] (IP) Member profile pages 
+[br]
+[section: fas fa-check-square] [/section] calendar time zone converter 
+[br]
+[section: fas fa-check-square] [/section] (IP) Social Media presence 
+[br]
+[section: far fa-square] [/section] Event coordination 
+[br][/left]
+
+[h1]Officers / Volunteers[/h1]
+[left]
+[user:shyredfox] - admin and creator, insanity instigator, and general help for ASC (membership, calendar, etc.)
+[br]
+[user:Secondhand] - admin and supporter, connection to WA for us, fount of knowledge
+[br]
+[user:Timepool] - site wrangler, creator of amazing surreal art, developer of fab themes
+[br]
+[user:ZogMadDog] - membership wrangler, the one who came up with our awesome group name, DM extraordinaire \ 
+[br]
+[user:KahunaTheElder] - calendar wrangler, one most patient, game system creator
+[br]
+[user:Laurabones] - co-social media wrangler, helper for newbies, positivity central, Rawr!
+[br]
+[user:Sable Aradia] - co-social media wrangler, prolific author, does WA events + NaNoWriMo camp at the same time
+[br]
+[user:Heffé] - events wrangler, worldbuilding sage, a helpful guy with many hats in the WA world
+[br]
+[user:Lyraine Alei] - cheerleader #1, encourager of all, Queen of Breaking Streamers (in a good way)[/left]
+
+Our goal is to have at least two people able to handle any of the jobs for the Network - so there are no gaps if the officers have to step down or have an emergency. If there's somewhere you'd like to help out, let us know!
+
+[b]Thank you to all who have contributed, supported, and helped out to make our Network a possibility! [section: far fa-heart] [/section][/b]
+[br]
+[br]
