@@ -31,7 +31,9 @@
 		{% if variables.twitch_channel is defined %}
 			<h4>Channels</h4>
 			<a href="{{ variables.twitch_channel}}"><img src="https://www.worldanvil.com/uploads/images/c446badd51e6dc7b0ce7b7921f34e6a4.png" alt="Twitch" width="30" height="30"></a>
-		{% endif %}{% if variables.youtube_channel is defined %}
+		{% endif %}{% if variables.youtube_channel is empty %}
+			<!-- do nothing if there is no value. 'is defined' still displayed the stuff -->
+		{% else %}
 			<a href="{{ variables.youtube_channel}}"><img src="https://www.worldanvil.com/uploads/images/1f3affbda93279061f59c16410fc7011.png" alt="Youtube" width="30" height="30"></a>
 		{% endif %}</div>
 		<!-- {% if variables.other_chanel is defined %}
@@ -39,7 +41,9 @@
 			<dd> {{ variables.other_chanel}} </dd>
 		{% endif %} //-->
 		<div class="broadcast-community bbox">
-		{% if variables.discord_invite is defined %}
+		{% if variables.discord_invite is empty %}
+			<!-- do nothing if there is no value. 'is defined' still displayed the stuff -->
+		{% else %}
 			<h4>Join the Community</h4>
 			<a href="{{ variables.discord_invite}}"><img src="https://www.worldanvil.com/uploads/images/d0ebaff439f74575b1ab0d5504f5c070.png" alt="Youtube" width="30" height="30"></a>
 		{% endif %}</div>
@@ -52,7 +56,9 @@
 			<a href="{{ variables.website_2}}">{{ variables.website_2}} </a>
 		{% endif %}</div>
 		<div class="broadcast-merch bbox">
-		{% if variables.merchandise_link_1 is defined %}
+		{% if variables.merchandise_link_1 is empty %}
+			<!-- do nothing if there is no value. 'is defined' still displayed the stuff -->
+		{% else %}
 			<h4>Check Out My Merchandise</h4>
 			<a href="{{ variables.merchandise_link_1}} ">{{ variables.merchandise_link_1}} </a>
 		{% endif %}
