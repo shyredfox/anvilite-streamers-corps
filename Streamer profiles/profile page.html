@@ -1,5 +1,208 @@
-just have them go through the customize no matter what - then fewer mistakes for me
-
-https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=YmNjNTlyODhhbnZzZDFhdXY2dWxqOW5nYnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23af6020&amp;mode=WEEK
-
-https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FChicago&amp;src=YmNjNTlyODhhbnZzZDFhdXY2dWxqOW5nYnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=cWRzdGw0NWY4a3JvbmZyaWNjZWNmN245djhAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23af6020&amp;color=%239E69AF&amp;mode=WEEK
+<div class="broadcaster-profile">
+<div class="row"> <!-- TOP INFO -->
+	<div class="broadcast-bio profile-col col-sm-5">
+		<!-- -------------BROADCASTING iNFO------------- -->
+		<div class="broadcast-topics bbox">
+		{% if variables.topic_main is defined %}
+			<h4>Broadcast Topics</h4>
+			<dd> <span class="main-topic">{{ variables.topic_main}}</span>{% if variables.topics_other_worldbuilding is defined %}, {{ variables.topics_other_worldbuilding}} </dd>
+			{% endif %}
+		{% endif %}</div>
+		<div class="broadcast-info bbox">
+		{% if variables.broadcasting_info is defined %}
+			<h4>Channel Summary</H4>
+			<dd> {{ variables.broadcasting_info}} </dd>
+		{% endif %}</div>
+	</div>
+	<div class="profile-col col-sm-4">
+		<!-- -------------SOCIAL MEDIA------------- -->
+		<!-- -------------NAMEs ------------- -->
+		<div class="broadcast-names bbox">
+		{% if variables.also_known_as is defined %}
+			<h4>Also Known As</h4>
+			{{ variables.also_known_as}}
+		{% endif %}</div>
+		<div class="broadcast-discord-id bbox">
+		{% if variables.discordid is defined %}
+			<h4>Catch Me on Discord</h4>
+			<dd> {{ variables.discordid}} </dd>
+		{% endif %}</div>
+		<div class="broadcast-stream-chan bbox">
+		{% if variables.twitch_channel is defined %}
+			<h4>Channels</h4>
+			<a href="{{ variables.twitch_channel}}"><img src="https://www.worldanvil.com/uploads/images/c446badd51e6dc7b0ce7b7921f34e6a4.png" alt="Twitch" width="30" height="30"></a>
+		{% endif %}{% if variables.youtube_channel is defined %}
+			<a href="{{ variables.youtube_channel}}"><img src="https://www.worldanvil.com/uploads/images/1f3affbda93279061f59c16410fc7011.png" alt="Youtube" width="30" height="30"></a>
+		{% endif %}</div>
+		<!-- {% if variables.other_chanel is defined %}
+			<dt>Other Channel</dt>
+			<dd> {{ variables.other_chanel}} </dd>
+		{% endif %} //-->
+		<div class="broadcast-community bbox">
+		{% if variables.discord_invite is defined %}
+			<h4>Join the Community</h4>
+			<a href="{{ variables.discord_invite}}"><img src="https://www.worldanvil.com/uploads/images/d0ebaff439f74575b1ab0d5504f5c070.png" alt="Youtube" width="30" height="30"></a>
+		{% endif %}</div>
+		<div class="broadcast-website bbox">
+		{% if variables.website_1 is defined %}
+			<h4>Visit My Website</h4>
+			<a href="{{ variables.website_1}}">{{ variables.website_1}} </a>
+		{% endif %}
+		{% if variables.website_2 is defined %}
+			<a href="{{ variables.website_2}}">{{ variables.website_2}} </a>
+		{% endif %}</div>
+		<div class="broadcast-merch bbox">
+		{% if variables.merchandise_link_1 is defined %}
+			<h4>Check Out My Merchandise</h4>
+			<a href="{{ variables.merchandise_link_1}} ">{{ variables.merchandise_link_1}} </a>
+		{% endif %}
+		{% if variables.merchandise_link_2 is defined %}
+			<a href="{{ variables.merchandise_link_2}} ">{{ variables.merchandise_link_2}} </a>
+		{% endif %}</div>
+	</div>
+	<div class="profile3 col-sm-3">
+		<!-- -------------PROFILE IMAGE + ASC LOGO------------- -->
+		<div class="broadcast-profile-image bbox">
+		{% if variables.profile_image is defined %}
+			<div> [img:{{ variables.profile_image }}|nolink] </div>
+		{% endif %}</div>
+		<div class="broadcast-asc-logo bbox">
+		<img class="asc-logo" src="https://www.worldanvil.com/uploads/images/fc8efc4e31e686f133e771bdfa0cbe1a.png" alt="ASC 	Network Logo" width="112" height="112" margin-left="auto" margin-right="auto"></div>
+		<div class="map-display bbox" id=""> 
+			{% if variables.map_display is defined %}
+				<h4>On ASC Map?</h4>
+				{% if 'Not on Map' in variables.map_display|raw %}
+					<dd>{{ variables.map_display }}</dd>
+				{% else %}
+					<a href="https://www.worldanvil.com/w/anvilite-streamers-corps/map/4e91a6f2-eed4-4376-88e4-fa7a57cfb4fe">ASC Members Map</a>
+					<dd>{{ variables.map_display }}</dd>
+				{% endif %}
+			{% endif %}
+		</div>
+	</div>
+</div><!-- END - TOP INFO -->
+	
+<!-- -------------CALENDAR------------- -->
+<div class="broadcast-cal-frame bbox">
+		
+	<!-- PARSING THE ORIGINAL STRING -->
+    {# ---------- Use split to allow display in any time zone? -------------------- #}
+	{% if variables.google_calendar_link is defined %}
+		<h4>Streaming Calendar</h4>
+		{% if variables.timezone is defined %}
+			<dt>Timezone: {{ variables.timezone}} </dt>
+		{% endif %}
+	{% endif %}
+		
+	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
+	<div>
+		<!-- DISPLAY THE ORIGINAL CALNDAR IN THE BROADCASTER'S TIMEZONE -->
+		<iframe class="broadcast-cal" src="{{ variables.google_calendar_link|raw}}" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+			<!-- now split it by 'ctz=' and piece back together -->
+			<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
+			{% set url_minus_tz = variables.google_calendar_link|split('ctz=') %}
+			{% set url_end = url_minus_tz[1]|split('src=', 2) %}
+			
+			<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
+			<!-- UTC -->
+			{% set utc = url_minus_tz[0]~'ctz=Etc%2FGMT&amp;src='~url_end[1] %}
+			<div class="border-boxy">
+			<!-- UTC+1 -->
+			{% set utc_p1 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D1&src=' ~url_end[1] %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (as minus) in the URL creation #}
+			<!-- UTC+2 -->
+			{% set utc_p2 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D2&src='~url_end[1] %} 
+			<!-- UTC+3 -->
+			{% set utc_p3 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D3&src='~url_end[1] %} 
+			<!-- UTC+4 -->
+			{% set utc_p4 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D4&src='~url_end[1] %} 
+			<!-- UTC+5 -->
+			{% set utc_p5 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D5&src='~url_end[1] %} 
+			<!-- UTC+6 -->
+			{% set utc_p6 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D6&src='~url_end[1] %} 
+			<!-- UTC+7 -->
+			{% set utc_p7 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D7&src='~url_end[1] %} 
+			<!-- UTC+8 -->
+			{% set utc_p8 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D8&src='~url_end[1] %} 
+			<!-- UTC+9 -->
+			{% set utc_p9 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D9&src='~url_end[1] %} 
+			<!-- UTC+10 -->
+			{% set utc_p10 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D10&src='~url_end[1] %} 
+			<!-- UTC+11 -->
+			{% set utc_p11 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D11&src='~url_end[1] %} 
+			<!-- UTC+12 -->
+			{% set utc_p12 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D12&src='~url_end[1] %} 
+			<!-- UTC-1 -->
+			{% set utc_m1 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B1&src='~url_end[1] %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
+			<!-- UTC-2 -->
+			{% set utc_m2 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B2&src='~url_end[1] %} 
+			<!-- UTC-3 -->
+			{% set utc_m3 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B3&src='~url_end[1] %} 
+			<!-- UTC-4 -->
+			{% set utc_m4 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B4&src='~url_end[1] %} 
+			<!-- UTC-5 -->
+			{% set utc_m5 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B5&src='~url_end[1] %} 
+			<!-- UTC-6 -->
+			{% set utc_m6 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B6&src='~url_end[1] %} 
+			<!-- UTC-7 -->
+			{% set utc_m7 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B7&src='~url_end[1] %} 
+			<!-- UTC-8 -->
+			{% set utc_m8 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B8&src='~url_end[1] %} 
+			<!-- UTC-9 -->
+			{% set utc_m9 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B9&src='~url_end[1] %}
+			<!-- UTC-10 -->
+			{% set utc_m10 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B10&src='~url_end[1] %}
+			<!-- UTC-11 -->
+			{% set utc_m11 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B11&src='~url_end[1] %}
+			<!-- Debugging -->
+			{# VAR is: {{ variables.multiple_calendars }}<br><br> #}
+			{# URL = {{ variables.google_calendar_link }}<br><br>
+			url_minus_tz = {{ url_minus_tz[0] }}<br><br>
+			array count = {{ url_end|length }}<br><br>
+			url_end 0 = {{ url_end[0] }}<br><br>
+			url_end 1 = {{ url_end[1] }}<br><br> 
+			utc {{ utc|raw }}<br><br>
+			utc_p12= {{ utc_p12|raw }} #}
+	</div>
+	<br><br>
+	<!-- DISPLAY LINKS TO THE CALENDAR BY TIMEZONES -->
+	<h4>Would you like the calendar displayed in a different timezone?</h4>
+	<div class="dropdown">
+		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="TZ-menu">Pick Your Timezone <span class="caret"></span></button>
+		<ul class="dropdown-menu" role="menu" aria-labelledby="TZ-menu">
+			<li role="presentation"><a role="menuitem" href="{{ utc_p12|raw }}" target="_blank">UTC+12</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p11|raw }}" target="_blank">UTC+11</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p10|raw }}" target="_blank">UTC+10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p9|raw }}" target="_blank">UTC+9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p8|raw }}" target="_blank">UTC+8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p7|raw }}" target="_blank">UTC+7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p6|raw }}" target="_blank">UTC+6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p5|raw }}" target="_blank">UTC+5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p4|raw }}" target="_blank">UTC+4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p3|raw }}" target="_blank">UTC+3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p2|raw }}" target="_blank">UTC+2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p1|raw }}" target="_blank">UTC+1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc|raw}}" target="_blank">UTC</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m1|raw }}" target="_blank">UTC-1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m2|raw }}" target="_blank">UTC-2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m3|raw }}" target="_blank">UTC-3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m4|raw }}" target="_blank">UTC-4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m5|raw }}" target="_blank">UTC-5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m6|raw }}" target="_blank">UTC-6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m7|raw }}" target="_blank">UTC-7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m8|raw }}" target="_blank">UTC-8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m9|raw }}" target="_blank">UTC-9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m10|raw }}" target="_blank">UTC-10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m11|raw }}" target="_blank">UTC-11</a></li>
+		</ul>
+	</div> <!-- END DROPDOWN -->
+	<p>Click on the dropdown menu and click your timezone to open a new tab with a calendar converted to that timezone. 
+	<br><br>
+	*If you're not sure what your UTC offset is:</p>
+<ul>
+<li> Use <a href="https://www.timeanddate.com/worldclock/timezone/utc"  target="_blank">this converter</a>. </li>
+<li> Under the green box there is a link to set your location.  </li>
+<li> If the blue box says UTC is ahead of your time by X hours you are UTC-X.  </li>
+<li> If the blue box says UTC is behind your time by X hours you are UTC+X.  </li>
+<li> Remember the switch to and from daylight savings time changes the offset. </li>
+</ul>
+</div> <!-- END - BROADCAST CAL IFRAME + TZ MENU --></div> <!-- END - BROADCASTER PROFILE -->
