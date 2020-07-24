@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.3
+@version        1.0.4
 @description    CSS for the ASC Network Site
 @author         ShyRedFox 
 
@@ -9,6 +9,8 @@
 1.0.1 - Added statblock background that wasn't blinding white
 1.0.2 - added tweaks for the ASC Profile pages.
 1.0.3 - added social media links box
+1.0.4 - Took shyredfox's social media icons off. This is a shared world.
+
 ==/UserStyle== */
 :root {
 	/* google calendar colors for streaming calendar topics */
@@ -211,4 +213,9 @@ strong.phrase-key {
 
 .user-css li {
 	font-family: var(--f5);
+}
+
+/* The social media icons for shyredfox don't need to be on the pages for this world */
+.article-social-media {
+    display: none;
 }
