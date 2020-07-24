@@ -84,6 +84,10 @@
 					<dd>{{ variables.map_display }}</dd>
 				{% endif %}
 			{% endif %}
+			{% if variables.country is defined %}
+				<h4>Country</h4>
+				<dd> {{ variables.country}} </dd>
+			{% endif %}
 		</div>
 	</div>
 </div><!-- END - TOP INFO -->
