@@ -48,11 +48,15 @@
 			<a href="{{ variables.discord_invite}}"><img src="https://www.worldanvil.com/uploads/images/d0ebaff439f74575b1ab0d5504f5c070.png" alt="Youtube" width="30" height="30"></a>
 		{% endif %}</div>
 		<div class="broadcast-website bbox">
-		{% if variables.website_1 is defined %}
+		{% if variables.website_1  is empty %}
+			<!-- do nothing if there is no value. 'is defined' still displayed the stuff -->
+		{% else %}
 			<h4>Visit My Website</h4>
 			<a href="{{ variables.website_1}}">{{ variables.website_1}} </a>
 		{% endif %}
-		{% if variables.website_2 is defined %}
+		{% if variables.website_2 is empty %}
+			<!-- do nothing if there is no value. 'is defined' still displayed the stuff -->
+		{% else %}
 			<a href="{{ variables.website_2}}">{{ variables.website_2}} </a>
 		{% endif %}</div>
 		<div class="broadcast-merch bbox">
