@@ -19,7 +19,7 @@ We are a community for the World Anvilites who do internet streaming, broadcasti
 [br]
 [section: fas fa-check-square] [/section] Our Network code of ethics and requirements for membership (Requirements will be simple - such as be a WA member and have at least one stream/broadcast/podcast that relates to WA)
 [br]
-[section: fas fa-stopwatch] [/section] (IP) Member profile pages 
+[section: fas fa-check-square] [/section] (IP) Member profile pages 
 [br]
 [section: fas fa-check-square] [/section] calendar time zone converter 
 [br]
@@ -46,7 +46,8 @@ We are a community for the World Anvilites who do internet streaming, broadcasti
 [br]
 [user:Heffé] - events wrangler, worldbuilding sage, a helpful guy with many hats in the WA world
 [br]
-[user:Lyraine Alei] - cheerleader #1, encourager of all, Queen of Breaking Streamers (in a good way)[/left]
+[user:Lyraine Alei] - cheerleader #1, encourager of all, Queen of Breaking Streamers (in a good way)[br]
+[user:Qurilion] - honorary officer, Shy's co-conspirator, and super awesome supporter from the beginning[/left]
 
 Our goal is to have at least two people able to handle any of the jobs for the Network - so there are no gaps if the officers have to step down or have an emergency. If there's somewhere you'd like to help out, let us know!
 

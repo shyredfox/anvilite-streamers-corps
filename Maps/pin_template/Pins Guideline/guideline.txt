@@ -1,0 +1,23 @@
+Pins Guideline
+=================
+Icon Size 
+X: 35
+Y: 60
+
+Shadow Size
+X: 82
+Y: 60
+
+Icon Anchor
+X: 17
+Y: 60
+
+Popup Anchor
+X: 1
+Y: -50
+
+
+Design by:
+TJ Trewin for World Anvil LTD
+https://www.worldanvil.com
+
