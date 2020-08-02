@@ -1,0 +1,31 @@
+<div class="broadcaster-profile-badge">
+	<div class="row">
+		<div class="col-md-8 broadcaster-name">
+			{% if variables.name is defined %}
+				<h2>{{ variables.name }}</h2>
+			{% endif %}
+		</div>
+		<div class="col-md-3 broadcast-asc-logo">
+			<img class="asc-logo" src="https://www.worldanvil.com/uploads/images/fc8efc4e31e686f133e771bdfa0cbe1a.png" alt="ASC 	Network Logo" width="60" height="60" margin-left="auto" margin-right="auto">
+		</div>
+	</div>
+	<div class="broadcast-badge-deets">
+		{% if variables.broadcasting_info is defined %}
+			<dt>Broadcasting Info</dt>
+			<dd> {{ variables.broadcasting_info}}
+		{% endif %}
+		{% if variables.topic_main is defined %}
+			<dt>Topics</dt>
+			<dd>{{ variables.topic_main}}</dd>
+		{% endif %}{% if variables.topics_other_worldbuilding is defined %}
+			<dd>{{ variables.topics_other_worldbuilding}}</dd>
+		{% endif %}
+		{% if variables.twitch_channel is defined %}
+			<dt>Find Me On</dt>
+			<dd><a href="{{ variables.twitch_channel}}">Twitch</a></dd>
+		{% endif %}
+		{% if variables.youtube_channel is defined %}
+			<dd><a href="{{ variables.youtube_channel}}">YouTube</a></dd>
+		{% endif %}
+	</div>
+</div>

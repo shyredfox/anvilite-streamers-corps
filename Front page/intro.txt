@@ -8,6 +8,9 @@ We are a community for the World Anvilites who do internet streaming, broadcasti
 (Just be aware we're still working the bugs out of the process.)
 [articleblock:d239d74d-9f11-48f6-9f93-d35e742d3bb7]/* application info */
 
+[h1]Are You a New Member?[/h1]
+[articleblock:4d872dce-784f-43a9-8c6a-dcf5e6926d4c]
+
 [h1]What's New on the ASC Network?[/h1]
 [articleblock:2e72eaad-41ab-4ad7-959a-ec7f41dc51e8]/* ASC News/Updates */
 
