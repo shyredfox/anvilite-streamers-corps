@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.5
+@version        1.0.7
 @description    CSS for the ASC Network Site
 @author         ShyRedFox 
 
@@ -11,10 +11,15 @@
 1.0.3 - added social media links box
 1.0.4 - Took shyredfox's social media icons off. This is a shared world.
 1.0.5 - Styled the subcontainers so we can use them for pending changes to a page.
+1.0.6 - added a black background box with "white" text and class to center text and a few other things for the officer page (spacing classes to deal with the FA icons being different sizes)
+1.0.7 - 08/06/2020 - organized and commented for Timepool, so it's easy for him to create our new theme
 
+
+KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
 ==/UserStyle== */
+
 :root {
-	/* google calendar colors for streaming calendar topics */
+	/* KEEP - google calendar colors for streaming calendar topics */
 	--Raddicchio: #ad1457; 
 	--CherryBlossom: #d81b60;
 	--Tomato: #d50000;
@@ -45,23 +50,28 @@
 	--Graphite: #616161 ;
 	--Birch: #a79b8e ;
 	
-	/* SRF's colors */
+	/* KEEP or REPLACE: Member Profile highlight colors */
 	--yellow-orange:#e3ad00;
 	
 
-	/* spacing, width, border radius etc */
+	/* Calendar Key - spacing, width, border radius etc */
 	--color-box-size: 1em;
 	--color-box-marg: .25em;
 	--color-box-radius:.25em;
-	--white: #ddd;
-	--whitet: #dddddd90;
+	
+	/* NOTE - ShyRedFox uses variables for most everything so these are scattered through out code */
+	/* Generic - spacing, width, border, etc. */
 	--box-radius: 10px;
 	--box-marg: 10px;
+	
+	/* Color classes */
 	--black: #222;
+	--white: #ddd;
+	--whitet: #dddddd90;
 }
 
 /*  ---------------------------------
-Ademal's grid column hack - gifted in Discord server
+KEEP - Ademal's grid column hack - gifted in Discord server
 -------------------------------- */
 /*Contain-Grid*/
  @media only screen and (min-width: 960px){
@@ -89,9 +99,11 @@ Ademal's grid column hack - gifted in Discord server
     }
 }
 
-/* .box : fake class just so I ahve a name to pur in the conatiner code tags */
 
-/* Box to highlight items */
+/* ----------------------------------
+	CONTAINER CLASSES - commonly used
+------------------------------------- */ 
+/* KEEP CLASS (style as you like) - Box to highlight items (The base attributes. ShyRedFox uses other classes to modify this one. Keep this above the modifier classes in the code) */
 .HLBox {
     border-radius: var(--box-radius);
     padding: var(--box-marg);
@@ -100,7 +112,61 @@ Ademal's grid column hack - gifted in Discord server
 	color: var(--black);
 }
 
-/* calendar colors - key */
+/* KEEP: display the contents of a statblock is if it was part of the container => AKA invisibile statblocks */
+.display-contents-statblock, .display-contents-statblock .statblock {
+  display: contents;
+}
+
+/* KEEP CLASS (style as you like) - subscriber group containers */
+.user-css [class*=subcontain] {
+	display: block;
+	background: var(--Pistachio);
+	color: var(--black);
+	border: 2px dashed var(--white);
+	padding: 20px;
+	margin: var(--box-marg);
+	border-radius: var(--box-radius);
+}
+
+/* ----------------------------------
+	GENERAL THEME STYLING
+------------------------------------- */ 
+/* KEEP - The social media icons for shyredfox don't need to be on the pages for this world */
+.article-social-media {
+    display: none;
+}
+
+/* space after key value pairs - Having no space after them is a pet peeve of Fox's, so she added some */
+.user-css .phrase-value {
+	margin-bottom: var(--box-marg);
+}
+
+/* Theme changes for until we get an official theme of our own */
+.user-css .statblock {
+	background: var(--ember-dark); /* variable from the World Ember theme */
+}
+
+#world-navigation-sidebar {
+	background: var(--ember-dark-d); /* variable from the World Ember theme */
+}
+
+/* -----------------------------------
+	HOMEPAGE/GLOBAL COPYRIGHT FOOTER
+-------------------------------------- */
+/* KEEP: ASC Social media box - stored in GLOBAL COPYRIGHT FOOTER */
+/* NOTE to Timepool - if you can figure out how to make this a sticky and stay at the top - that would be awesome. It might need to be placed somewhere other than the global copyright footer to do this. But if it's on the front page, that's all that really matters */
+.social-media-box {
+	width: 200px;
+	position: fixed; 
+	top: 75px; 
+	right: 50px; 
+	z-index: 2;
+}
+
+/* ----------------------------------
+	CALENDAR CLASSES
+------------------------------------- */
+/* KEEP - boxes for calendar key */
 .cal-color-box {/*box that holds the calendar color key list */
 	display: inline-block; 
 	width: var(--color-box-size);
@@ -112,7 +178,7 @@ Ademal's grid column hack - gifted in Discord server
 	border-radius: var(--color-box-radius);
 }
 
-
+/* KEEP - Single use but called from containers for calendar key */
 .Raddicchio { background: var(--Raddicchio)}
 .CherryBlossom { background: var(--CherryBlossom)}
 .Tomato { background: var(--Tomato)}
@@ -143,26 +209,40 @@ Ademal's grid column hack - gifted in Discord server
 .Graphite{ background: var(--Graphite)}
 .Birch { background: var(--Birch)}
 
-/* space after key value pairs */
-.user-css .phrase-value {
-	margin-bottom: var(--box-marg);
+
+/* ------------------------
+	OFFICER PAGE STYLING https://www.worldanvil.com/w/anvilite-streamers-corps/a/asc-officers-article
+--------------------------- */
+/* KEEP or REPLACE - officer boxes */
+.black-bg { 
+	background: #111; 
+	color: var(--white);
+	border: 1px dotted var(--whitet);
 }
 
-/*display the contents of a statblock is if it was part of the container = invisibile statblocks */
-.display-contents-statblock .statblock {
-  display: contents;
+/* KEEP or REPLACE: to move the text about each officer over a bit from the left */
+.pad-left-30 {
+	padding-left: 30px;
 }
 
-/* Theme changes for until we get an official theme of our own */
-.user-css .statblock {
-	background: var(--ember-dark);
+/* KEEP or REPLACE: makes a block out of the Font Awesome icons so we can give them a specific width. FA icons vary in size and this is how I could make the text after them line up */
+.fa-even-out {
+	width: 2em;
+	display: inline-block;
+	text-align: center;
 }
 
-#world-navigation-sidebar {
-	background: var(--ember-dark-d);
+/* KEEP or REPLACE: when I needeed to make a new line, this puts the new line text in line with the other text */
+.newline-even-out {
+	width: 2.1em;
+	display: inline-block;
 }
 
 
+/* ------------------------------------
+	MEMBER PROFILE SHEET TEMPLATE 
+	KEEP or UPDATE - Fox kept them here so they could be updated with the theme. We can move them into the member profile sheet template later if we want. The card/mini profile styling is in the sheet so it's applied wherevever people use it (their author profile, their worlds, etc)
+--------------------------------------- */
 .main-topic {
 	font-weight: 800;
 	background: #7a0000;
@@ -185,11 +265,13 @@ Ademal's grid column hack - gifted in Discord server
 	margin: 14px;
 }
 
+/* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
 strong.phrase-key {
 	font-size: 1.2em;
 	color: var(--yellow-orange);
 }
 
+/* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
 .phrase-value {
 	margin-left: 15px;
 }
@@ -198,37 +280,13 @@ strong.phrase-key {
 	border: none;
 }
 
+/* ------------------------------------
+	MEMBER PROFILE PAGES
+	KEEP or UPDATE - Fox kept them here so they could be updated with the theme. We can move them into the member profile sheet template later if we want. The card/mini profile styling is in the sheet so it's applied wherevever people use it (their author profile, their worlds, etc)
+--------------------------------------- */
 .user-css .btn-white {
 	background: #eee !important;
 	vertical-align: middle !important;
 }
 
-/* ASC Social media box */
-.social-media-box {
-	width: 200px;
-	position: fixed; 
-	top: 75px; 
-	right: 50px; 
-	z-index: 2;
-}
-
-.user-css li {
-	font-family: var(--f5);
-}
-
-/* The social media icons for shyredfox don't need to be on the pages for this world */
-.article-social-media {
-    display: none;
-}
-
-
-/* subscriber group containers */
-.user-css [class*=subcontain] {
-	display: block;
-	background: var(--Pistachio);
-	color: var(--black);
-	border: 2px dashed var(--white);
-	padding: 20px;
-	margin: var(--box-marg);
-	border-radius: var(--box-radius);
-}
+/* End Member profile pages/sheets code */
