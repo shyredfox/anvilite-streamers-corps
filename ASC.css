@@ -1,0 +1,429 @@
+/* ==UserStyle==
+@name           Anvilite Streamers Corps
+@namespace      github.com/openstyles/stylus
+@version        1.0.8
+@description    CSS for the ASC Network Site
+@author         ShyRedFox 
+
+1.0.0 - google calendar color coding boxes with the offical colors from Google
+1.0.1 - Added statblock background that wasn't blinding white
+1.0.2 - added tweaks for the ASC Profile pages.
+1.0.3 - added social media links box
+1.0.4 - Took shyredfox's social media icons off. This is a shared world.
+1.0.5 - Styled the subcontainers so we can use them for pending changes to a page.
+1.0.6 - added a black background box with "white" text and class to center text and a few other things for the officer page (spacing classes to deal with the FA icons being different sizes)
+1.0.7 - 08/06/2020 - organized and commented for Timepool, so it's easy for him to create our new theme
+1.0.8 - 08/08/2020 - Added fixes for map slide out for articles becuase Member profiles had black text on dark backgroun
+
+KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
+==/UserStyle== */
+
+/* ASC Theme
+** Desgined by
+** Timepool (Garrett Lewis)
+https://www.worldanvil.com/author/Timepool
+** With additional work and help by Amy Winters Voss
+https://www.worldanvil.com/author/shyredfox
+*/
+
+/* __VARIABLES__ */
+:root {
+	/* Google calendar colors for streaming calendar topics */
+	--Raddicchio: #ad1457; 
+	--CherryBlossom: #d81b60;
+	--Tomato: #d50000;
+	--Flamingo: #e67c73 ;
+
+	--Tangerine: #f4511e ;
+	--Pumpkin: #ef6c00 ;
+	--Mango: #f09300 ;
+	--Banana: #f6bf26 ;
+
+	--Citron: #e4c441 ;
+	--Avocado: #c0ca33 ;
+	--Pistachio: #7cb342 ;
+	--Sage: #33b679 ;
+
+	--Basil: #0b8043 ;
+	--Eucalyptus: #009688 ;
+	--Peacock: #039be5 ;
+	--Cobalt: #4285f4 ;
+
+	--Blueberry: #3f51b5 ;
+	--Lavender: #7986cb ;
+	--Wysteria: #b39ddb ;
+	--Amethyst: #9e69af ;
+
+	--Grape: #8e24aa ;
+	--Cocoa: #795548 ;
+	--Graphite: #616161 ;
+	--Birch: #a79b8e ;
+	
+	/* KEEP or REPLACE: Member Profile highlight colors */
+	--yellow-orange:#e3ad00;
+	
+	/* Calendar Key - spacing, width, border radius etc */
+	--color-box-size: 1em;
+	--color-box-marg: .25em;
+	--color-box-radius:.25em;
+	
+	/* NOTE - ShyRedFox uses variables for most everything so these are scattered through out code */
+	/* Generic - spacing, width, border, etc. */
+	--box-radius: 10px;
+	--box-marg: 10px;
+	
+	/* Color classes */
+	--black: #222;
+	--white: #ddd;
+	--whitet: #dddddd90;
+
+	/* Timepool variables */
+	--CovGarden: CovGarden;
+	--Salon: MonicasSalon;
+	--Ardeco: Ardeco;
+	--shadow: rgba(0, 0, 0, 0.6);
+	--maple: #422319;
+	--darkmaple: #22130e;
+	--silverage: #C7C0B5;
+	--patio: #6E4E30;
+	--oldmustard: #B99A57;
+}
+
+/* __BACKGROUNDS__ */
+.user-css-presentation {
+	background: url(https://www.worldanvil.com/uploads/images/e779ea8b56070dfefa14c7c18fae2e54.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.user-css.page,
+.user-css-extended .page,
+.user-css-presentation .tooltipster-content {
+	background: url(https://www.worldanvil.com/uploads/images/f259758f9058e169894a1f6ac9626795.jpg);
+	border: 15px double var(--darkmaple);
+	box-shadow: 0 0 9px 1px var(--shadow),
+				inset 0 0 13px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* __TEXT__ */
+@font-face {
+    font-family: CovGarden;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/bcf4439a226a8337367faadae448743972641e12/CovGarden.woff2);
+}
+@font-face {
+    font-family: MonicasSalon;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/3b37ea7a672c2879fcf0874daff365770d844ead/MonicasSalonNF.ttf);
+}
+@font-face {
+    font-family: Ardeco;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/3fba20582d3b3ade68ad3721a172a9cb59cb08e9/Ardeco.ttf);
+}
+
+.user-css,
+.user-css p,
+.user-css-extended,
+.user-css-extended p,
+.user-css-map-sidebar p,
+.user-css .calendar-presentation sup,
+.user-css .timeline li .timeline-panel p,
+.user-css .timeline li .milestone-panel p,
+.user-css-extended .timeline li .timeline-panel p,
+.user-css-extended .timeline li .milestone-panel p,
+.user-css-extended dl {
+    font-family: var(--Ardeco);
+	color: var(--silverage);
+    font-size: 23px;
+}
+.user-css .article-content {
+    font-size: 23px;
+}
+/* Not redundant, only gets standard text. The above rule with 50 different selectors will target things you DO NOT want to change to the same size. */
+.user-css,
+.user-css-extended,
+.user-css-extended p {
+    font-size: ;
+}
+/* Headers */
+.user-css h1,
+.user-css-map-sidebar h1,
+.user-css-presentation .tooltipster-content h1,
+.user-css .statblock h1,
+.user-css-extended .orphan-era h1 {
+	text-align: center;
+	font-family: var(--CovGarden);
+	color: var(--silverage);
+	text-shadow: 0 2px 5px black;
+	font-size: 60px;
+}
+.user-css h2,
+.user-css-extended .page h2,
+.user-css-map-sidebar h2,
+.user-css-presentation .tooltipster-content h2 {
+	font-family: var(--Salon);
+	color: var(--patio);
+	font-size: 35px;
+	letter-spacing: 2px;
+	text-shadow: 0 2px 2px black;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __MISC FIXES__ */
+
+/* Map- article view fix */
+.user-css-map-sidebar .statblock {
+	display: contents;
+}
+
+/* Display the contents of a statblock as if it was part of the container => AKA invisibile statblocks */
+.display-contents-statblock, .display-contents-statblock .statblock {
+	display: contents;
+}
+
+/* Shy social remove */
+.article-social-media {
+    display: none;
+}
+
+/* Space after key value pairs - Having no space after them is a pet peeve of Fox's, so she added some */
+.user-css .phrase-value {
+	margin-bottom: var(--box-marg);
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __CONTAINERS__ */
+
+/* __ADEMAL GRID COLUMNS__ */
+/*Contain-Grid*/
+@media only screen and (min-width: 960px){
+    .contain-grid{
+        display: grid;
+        grid-gap: 20px;
+        grid-auto-rows: minmax(0px, auto) ;
+    }
+	.contain-grid-cal-color{
+        display: grid;
+        grid-gap: .1em;
+        grid-auto-rows: minmax(0px, auto) ;
+    }
+    .contain-grid-col-5 {
+        grid-template-columns: repeat(5, 1fr) ;
+    }
+    .contain-grid-col-4 {
+        grid-template-columns: repeat(4, 1fr) ;
+    }
+    .contain-grid-col-3 {
+        grid-template-columns: repeat(3, 1fr) ;
+    }
+    .contain-grid-col-2 {
+        grid-template-columns: repeat(2, 1fr) ;
+    }
+}
+
+/* __SHY CONTAINERS__ */ 
+/* KEEP CLASS (style as you like) - Box to highlight items (The base attributes. ShyRedFox uses other classes to modify this one. Keep this above the modifier classes in the code) */
+.HLBox {
+    border-radius: var(--box-radius);
+    padding: var(--box-marg);
+    background: var(--whitet);
+	margin: var(--box-marg);
+	color: var(--black);
+}
+/* KEEP CLASS (style as you like) - subscriber group containers */
+.user-css [class*=subcontain] {
+	display: block;
+	background: var(--Pistachio);
+	color: var(--black);
+	border: 2px dashed var(--white);
+	padding: 20px;
+	margin: var(--box-marg);
+	border-radius: var(--box-radius);
+}
+
+/* KEEP - boxes for calendar key */
+.cal-color-box {/*box that holds the calendar color key list */
+	display: inline-block; 
+	width: var(--color-box-size);
+	height: var(--color-box-size);
+	margin-left: var(--color-box-marg);
+	margin-right: var(--color-box-marg);
+	border: 1.5px solid var(--white);
+	color: var(--white);
+	border-radius: var(--color-box-radius);
+}
+
+
+/* __CALENDAR CONTAINERS__ */
+/* KEEP - Single use but called from containers for calendar key */
+.Raddicchio { background: var(--Raddicchio)}
+.CherryBlossom { background: var(--CherryBlossom)}
+.Tomato { background: var(--Tomato)}
+.Flamingo { background: var(--Flamingo)}
+
+.Tangerine { background: var(--Tangerine)}
+.Pumpkin { background: var(--Pumpkin)}
+.Mango { background: var(--Mango)}
+.Banana { background: var(--Banana)}
+
+.Citron { background: var(--Citron)}
+.Avocado { background: var(--Avocado)}
+.Pistachio { background: var(--Pistachio)}
+.Sage { background: var(--Sage)}
+
+.Basil { background: var(--Basil)}
+.Eucalyptus { background: var(--Eucalyptus)}
+.Peacock { background: var(--Peacock)}
+.Cobalt { background: var(--Cobalt)}
+
+.Blueberry { background: var(--Blueberry)}
+.Lavender { background: var(--Lavender)}
+.Wysteria { background: var(--Wysteria)}
+.Amethyst { background: var(--Amethyst)}
+
+.Grape { background: var(--Grape)}
+.Cocoa { background: var(--Cocoa)}
+.Graphite{ background: var(--Graphite)}
+.Birch { background: var(--Birch)}
+
+
+/* ------------------------------------------------------------------------------------- */
+/* Remember for later */
+
+/* KEEP: ASC Social media box - stored in GLOBAL COPYRIGHT FOOTER */
+/* NOTE to Timepool - if you can figure out how to make this a sticky and stay at the top - that would be awesome. It might need to be placed somewhere other than the global copyright footer to do this. But if it's on the front page, that's all that really matters */
+.social-media-box {
+	width: 200px;
+	position: fixed; 
+	top: 75px; 
+	right: 50px; 
+	z-index: 2;
+}
+/* KEEP or REPLACE - officer boxes */
+.black-bg { 
+	background: #111; 
+	color: var(--white);
+	border: 1px dotted var(--whitet);
+}
+/* KEEP or REPLACE: to move the text about each officer over a bit from the left */
+.pad-left-30 {
+	padding-left: 30px;
+}
+/* KEEP or REPLACE: makes a block out of the Font Awesome icons so we can give them a specific width. FA icons vary in size and this is how I could make the text after them line up */
+.fa-even-out {
+	width: 2em;
+	display: inline-block;
+	text-align: center;
+}
+/* KEEP or REPLACE: when I needeed to make a new line, this puts the new line text in line with the other text */
+.newline-even-out {
+	width: 2.1em;
+	display: inline-block;
+}
+
+/* __MEMBER PROFILE SHEET TEMPLATE__ */
+
+/* KEEP or UPDATE - Fox kept them here so they could be updated with the theme. We can move them into the member profile sheet template later if we want. The card/mini profile styling is in the sheet so it's applied wherevever people use it (their author profile, their worlds, etc) */
+.main-topic {
+	font-weight: 800;
+	background: #7a0000;
+	border-radius: 5px;
+	padding: 3px;
+}
+.broadcaster-proile dd {
+	text-indent: 0em; 
+	margin-left: 10px;
+}
+.asc-logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.bbox {
+	margin: 14px;
+}
+/* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
+strong.phrase-key {
+	font-size: 1.2em;
+	color: var(--yellow-orange);
+}
+/* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
+.phrase-value {
+	margin-left: 15px;
+}
+.profile-col {
+	border: none;
+}
+
+/* __MEMBER PROFILE PAGES__ */
+.user-css .btn-white {
+	background: #eee !important;
+	vertical-align: middle !important;
+}
+
+/* CHECK ON VARIOUS SCREEN SIZES AND BROWSERS */
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __CSS PALETTE__ */
+#hidden-sidebar {
+    background-color: transparent;
+}
+#css-palette-panel {
+    position: fixed !important;
+    right: .1px;
+    width: 17% !important;
+    border: 2px solid #645656;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-left-radius: 20px;
+}
+#css-palette-panel textarea.form-control {
+    height: 0;
+}
+#css-palette-panel .form-group {
+    background: #cc6414;
+    color: #fff4a3;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+#css-palette-panel textarea{
+    min-height: 55vh !important;
+}
+#css-palette-save {
+    color: #fff4a3!important;
+    background: #cc6414;
+    font-weight: bold;
+    border: 3px solid #346c77;
+    border-radius: 20px;
+    transition: all 0.1s;
+}
+#css-palette-save:hover {
+    color: #346c77!important;
+    background: #fff4a3;
+}
+/* Button */
+.hidden-xs {
+background: transparent;
+}
+.hidden-xs .fa-palette {
+    background: white;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
+    top: 200px !important;
+    border: 2px solid #645656;
+    border-right-width: 0px;
+    margin-left: -33px;
+    position: fixed !important;
+    z-index: 0;
+}
