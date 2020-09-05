@@ -1,9 +1,9 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.7
+@version        1.0.9
 @description    CSS for the ASC Network Site
-@author         ShyRedFox 
+@author         Timepool (Garrett Lewis)
 
 1.0.0 - google calendar color coding boxes with the offical colors from Google
 1.0.1 - Added statblock background that wasn't blinding white
@@ -13,13 +13,23 @@
 1.0.5 - Styled the subcontainers so we can use them for pending changes to a page.
 1.0.6 - added a black background box with "white" text and class to center text and a few other things for the officer page (spacing classes to deal with the FA icons being different sizes)
 1.0.7 - 08/06/2020 - organized and commented for Timepool, so it's easy for him to create our new theme
-
+1.0.8 - 08/08/2020 - Added fixes for map slide out for articles becuase Member profiles had black text on dark background
+1.0.9 - New theme by Timepool + minor menu fix (took out shadow ib timezone menus list items - by ShyRedFox)
 
 KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
 ==/UserStyle== */
 
+/* ASC Theme
+** Desgined by
+** Timepool (Garrett Lewis)
+https://www.worldanvil.com/author/Timepool
+** With additional work and help by Amy Winters-Voss
+https://www.worldanvil.com/author/shyredfox
+*/
+
+/* __VARIABLES__ */
 :root {
-	/* KEEP - google calendar colors for streaming calendar topics */
+	/* Google calendar colors for streaming calendar topics */
 	--Raddicchio: #ad1457; 
 	--CherryBlossom: #d81b60;
 	--Tomato: #d50000;
@@ -53,7 +63,6 @@ KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the S
 	/* KEEP or REPLACE: Member Profile highlight colors */
 	--yellow-orange:#e3ad00;
 	
-
 	/* Calendar Key - spacing, width, border radius etc */
 	--color-box-size: 1em;
 	--color-box-marg: .25em;
@@ -68,13 +77,989 @@ KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the S
 	--black: #222;
 	--white: #ddd;
 	--whitet: #dddddd90;
+
+	/* Timepool variables */
+	--CovGarden: CovGarden;
+	--Salon: MonicasSalon;
+	--Ardeco: Ardeco;
+	--shadow: rgba(0, 0, 0, 0.6);
+	--maple: #422319;
+	--darkmaple: #22130e;
+	--transdarkmaple: #22130e98;
+	--silverage: #C7C0B5;
+	--darkage: #635f58;
+	--darkestage: #2b2925;
+	--patio: #815c3a;
+	--oldmustard: #B99A57;
+	--juiced: #ce9847;
+	--cream: #ceb28e;
+	--burntcream: #8a775e;
 }
 
-/*  ---------------------------------
-KEEP - Ademal's grid column hack - gifted in Discord server
--------------------------------- */
+/* __BACKGROUNDS__ */
+.user-css-presentation {
+	background: url(https://www.worldanvil.com/uploads/images/e779ea8b56070dfefa14c7c18fae2e54.jpg);
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.user-css.page,
+.user-css-extended .page,
+.user-css-presentation .tooltipster-content {
+	background: url(https://www.worldanvil.com/uploads/images/f259758f9058e169894a1f6ac9626795.jpg);
+	border: 15px double var(--darkmaple);
+	box-shadow: 0 0 9px 1px var(--shadow),
+				inset 0 0 13px 1px rgba(0, 0, 0, 0.4);
+	border-top-left-radius: 120px;
+	border-top-right-radius: 120px;
+	margin-bottom: 0;
+}
+.user-css-extended .page {
+	border-top-width: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+/* __TEXT__ */
+@font-face {
+    font-family: CovGarden;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/bcf4439a226a8337367faadae448743972641e12/CovGarden.woff2);
+}
+@font-face {
+    font-family: MonicasSalon;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/3b37ea7a672c2879fcf0874daff365770d844ead/MonicasSalonNF.ttf);
+}
+@font-face {
+    font-family: Ardeco;
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://rawcdn.githack.com/Timespool/Fonts/3fba20582d3b3ade68ad3721a172a9cb59cb08e9/Ardeco.ttf);
+}
+
+.user-css,
+.user-css p,
+.user-css-extended,
+.user-css-extended p,
+.user-css-map-sidebar p,
+.user-css .calendar-presentation sup,
+.user-css .timeline li .timeline-panel p,
+.user-css .timeline li .milestone-panel p,
+.user-css-extended .timeline li .timeline-panel p,
+.user-css-extended .timeline li .milestone-panel p,
+.user-css-extended dl {
+    font-family: var(--Ardeco);
+	color: var(--silverage);
+}
+.user-css .article-content {
+    font-size: 23px;
+}
+/* Not redundant, only gets standard text. The above rule with 50 different selectors will target things you DO NOT want to change to the same size. */
+.user-css,
+.user-css-extended,
+.user-css-extended p {
+    font-size: 23px;
+}
+/* Headers */
+.user-css h1,
+.user-css-map-sidebar h1,
+.user-css-presentation .tooltipster-content h1,
+.user-css .statblock h1,
+.user-css-extended .orphan-era h1 {
+	text-align: center;
+	font-family: var(--CovGarden);
+	color: var(--silverage);
+	text-shadow: 0 2px 5px black;
+	font-size: 60px;
+}
+.user-css h2,
+.user-css-extended .page h2,
+.user-css-map-sidebar h2,
+.user-css-presentation .tooltipster-content h2 {
+	font-family: var(--Salon);
+	color: var(--oldmustard);
+	font-size: 45px;
+	text-shadow: 0 2px 2px black;
+	border: none;
+	text-transform: capitalize;
+}
+.user-css h3,
+.user-css-extended .page h3,
+.user-css-map-sidebar h3,
+.user-css-presentation .tooltipster-content h3 {
+	font-family: var(--Salon);
+	color: var(--patio);
+	font-size: 35px;
+	text-shadow: 0 2px 2px black;
+}
+.user-css h4,
+.user-css-extended .page h4,
+.user-css-map-sidebar h4,
+.user-css .timeline li .timeline-panel h4,
+.user-css .timeline li .milestone-panel h4,
+.user-css-extended .timeline li .timeline-panel h4,
+.user-css-extended .timeline li .milestone-panel h4,
+.user-css-presentation .tooltipster-content h4 {
+	font-family: var(--Salon);
+	color: var(--oldmustard);
+	font-size: 30px;
+	text-shadow: 0 2px 2px black;
+}
+.user-css h5,
+.user-css-extended .page h5,
+.user-css-map-sidebar h5,
+.user-css .timeline li .timeline-panel h5,
+.user-css .timeline li .milestone-panel h5,
+.user-css-extended .timeline li .timeline-panel h5,
+.user-css-extended .timeline li .milestone-panel h5,
+.user-css-presentation .tooltipster-content h5,
+.user-css-presentation #world-navigation-sidebar .world-menu h5 {
+	font-family: var(--Salon);
+	color: var(--patio);
+	font-size: 30px;
+	text-shadow: 0 2px 2px black;
+}
+.user-css h6 {
+	font-family: var(--Salon);
+	color: var(--patio);
+	font-size: 25px;
+	text-shadow: 0 2px 2px black;
+}
+/* Links */
+.user-css a,
+.user-css a:focus,
+.user-css-extended .page a,
+.user-css .artist-credits a,
+.user-css .timeline li .timeline-panel a,
+.user-css .timeline li .milestone-panel a,
+.user-css-extended .timeline li .timeline-panel a,
+.user-css-extended .timeline li .milestone-panel a,
+.user-css-presentation .tooltipster-content a,
+.map-context-user-css .leaflet-popup-content-wrapper a {
+	color: var(--juiced);
+	text-shadow: 0 2px 2px black;
+	transition: all 0.2s;
+}
+.user-css a:hover,
+.user-css-extended a:hover,
+.user-css-presentation .tooltipster-content a:hover,
+.map-context-user-css .leaflet-popup-content-wrapper a:hover {
+	color: var(--silverage);
+	text-decoration: none;
+	text-shadow: 0 4px 2px black;
+}
+/* Tooltips */
+.user-css .tooltip.top .tooltip-arrow,
+.user-css-extended .tooltip.top .tooltip-arrow,
+.user-css-worldmenu .tooltip.top .tooltip-arrow {
+    border-top-color: var(--silverage);
+}
+.user-css .tooltip .tooltip-inner,
+.user-css-extended .tooltip .tooltip-inner,
+.user-css-worldmenu .tooltip .tooltip-inner {
+	font-family: var(--Ardeco);
+	font-size: 1.8em;
+	letter-spacing: 1px;
+	color: var(--silverage);
+	background: var(--darkmaple);
+	box-shadow: 0 2px 2px black;
+	border: 1px solid var(--silverage);
+}
+.user-css .text-abbreviation {
+	text-decoration: underline dotted var(--silverage);
+	border: none;
+}
+.user-css .tooltip.in,
+.user-css-extended .tooltip.in,
+.user-css-worldmenu .tooltip.in {
+    opacity: 1;
+}
+/* Misc */
+.user-css .article-subheading,
+.user-css .article-title-author {
+    text-align: center;
+    font-style: italic;
+}
+.user-css .article-subheading {
+	font-weight: 600;
+}
+.user-css .article-title-author {
+	font-size: 0.8em;
+}
+.user-css .text-muted {
+	color: var(--darkage);
+}
+.user-css .text-danger,
+.user-css-extended .text-danger {
+	font-family: var(--Ardeco);
+	font-size: 1.1em;
+	font-weight: 600;
+	color: var(--cream);
+	text-shadow: 0 2px 2px black;
+}
+.user-css .dropcap {
+	font-family: var(--Ardeco);
+}
+
+/* BUTTONS */
+.user-css .btn,
+.user-css-extended .btn,
+.user-css .label-roller,
+.user-css .rhea-ft-zoom-controls button {
+	color: var(--darkmaple)!important;
+	background: var(--cream);
+	font-family: var(--Ardeco);
+	font-weight: bold;
+	font-size: .7em;
+	border: 2px solid var(--burntcream);
+	border-radius: 50px;
+	text-shadow: 0 2px 2px var(--shadow);
+	box-shadow: 0 3px 8px var(--shadow);
+	transition: all 0.2s;
+}
+.user-css .btn:hover,
+.user-css-extended .btn:hover,
+.user-css .label-roller:hover,
+.user-css .rhea-ft-zoom-controls button:hover {
+	color: var(--cream)!important;
+	background: var(--burntcream);
+	border-color: var(--cream);
+	text-shadow: 0 2px 2px var(--shadow);
+	box-shadow: 0 3px 4px var(--shadow);
+}
+.user-css .btn:active,
+.user-css-extended .btn:active,
+.user-css .label-roller:active,
+.user-css .rhea-ft-zoom-controls button:active {
+	color: var(--cream)!important;
+	background: var(--burntcream);
+	border-color: var(--cream);
+	border-width: 1px;
+	text-shadow: 0 2px 2px var(--shadow);
+	box-shadow: 0 3px 4px var(--shadow);
+}
+
+/* __QUOTES__ */
+.user-css blockquote,
+.user-css-extended blockquote,
+.user-css-presentation .tooltipster-content blockquote {
+	font-family: var(--Ardeco);
+	color: var(--silverage);
+	background: var(--transdarkmaple);
+	box-shadow: inset 0px 0px 10px 2px rgba(0,0,0,0.6);
+	border: none;
+	border-radius: 5px;
+}
+.user-css blockquote .author,
+.user-css-extended blockquote .author,
+.user-css-presentation .tooltipster-content blockquote .author {
+	font-family: var(--Ardeco);
+	color: var(--oldmustard);
+}
+
+/* __SIDEBAR PANEL__ */
+.user-css .panel,
+.user-css-extended .panel,
+.user-css-extended .comment-box {
+	background: var(--darkestage);
+	border: 3px solid var(--darkage);
+	border-radius: 50px;
+	box-shadow: 0 3px 5px var(--shadow),
+				inset 0 3px 5px var(--shadow);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.user-css .panel h3,
+.user-css-extended .panel h3,
+.user-css .panel h5,
+.user-css-extended .panel h5 {
+	color: var(--silverage);
+}
+
+/* __HR__ */
+.user-css hr,
+.user-css-extended hr,
+.user-css-map-sidebar hr,
+.user-css .tooltipster-content hr {
+    border-top: 3px solid var(--oldmustard);
+}
+
+/* __IMAGES__ */
+.user-css .img-fluid,
+.user-css-image-thumbnail img {
+	border: 3px solid var(--oldmustard);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0 0 5px var(--shadow);
+}
+.user-css .artist-credits {
+	color: var(--darkmaple);
+	font-weight: bold;
+	background: var(--oldmustard);
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	box-shadow: 0 3px 4px var(--shadow);
+}
+
+/* __SPOILERS__ */
+.user-css .spoiler-button {
+	color: var(--silverage)!important;
+	font-size: .8em;
+	background: var(--darkage);
+	border-color: var(--silverage);
+}
+.user-css .spoiler-button:hover,
+.user-css .spoiler-button:focus {
+	color: var(--darkestage)!important;
+	font-size: .8em;
+	background: var(--silverage);
+	border-color: var(--darkage);
+}
+.user-css .spoiler-content,
+.user-css .aloud,
+.user-css-presentation .tooltipster-content .aloud {
+	color: var(--silverage);
+	background: var(--darkmaple);
+	border: 7px double var(--oldmustard);
+	border-radius: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	box-shadow: 0 3px 15px var(--shadow);
+}
+
+/* __ALOUD BOXES__ */
+.user-css .aloud,
+.user-css-presentation .tooltipster-content .aloud {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 3px solid var(--darkage);
+	box-shadow: 0 0 5px var(--shadow);
+}
+/* Code boxes */
+.user-css pre {
+	color: var(--darkmaple);
+	background: var(--oldmustard);
+	border: 3px solid var(--darkmaple);
+	border-radius: 50px;
+	padding: 10px 15px;
+	font-family: var(--Ardeco);
+	font-weight: bold;
+	font-size: .9em;
+	letter-spacing: 1px;
+}
+
+/* __ARTICLE BLOCKS__ */
+.user-css .article-panel,
+.user-css-extended .article-panel,
+.user-css .map-box {
+	background: var(--darkmaple);
+	border-radius: 20px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	box-shadow: 0 3px 5px var(--shadow);
+	transition: all 0.3s;
+}
+.user-css .article-panel:hover,
+.user-css-extended .article-panel:hover,
+.user-css .map-box:hover {
+	background: var(--maple);
+	box-shadow: 0 5px 5px var(--shadow);
+}
+.user-css .article-panel .heading {
+	color: var(--oldmustard);
+	font-size: 1.6em;
+	text-transform: capitalize;
+}
+.user-css .article-panel .subheading,
+.user-css .article-panel .date  {
+	color: var(--silverage);
+}
+.user-css .article-panel .excerpt {
+	background: var(--maple);
+	border-radius: 20px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	padding: 10px;
+	margin-bottom: 0;
+}
+
+/* __HOMEPAGE__ */
+.user-css .world-author {
+	font-family: var(--Ardeco);
+	font-size: 1em;
+}
+/* Table of Contents */
+.user-css.page-world-homepage #world-menu,
+.user-css.page-world-homepage #world-maps,
+.user-css.page-world-homepage #world-timelines,
+.user-css-presentation #world-navigation-sidebar .world-menu {
+	background: var(--maple);
+	padding: 7px 10px;
+	border: 3px solid var(--darkmaple);
+	border-radius: 20px;
+	box-shadow: 0 3px 5px var(--shadow);
+}
+.user-css .world-toc-header,
+.user-css .maps-list h2,
+.user-css .world-recent-articles h2 {
+	text-align: center;
+}
+.user-css .fa-external-link {
+    display: none;
+}
+/* Map blocks */
+.user-css .map-box p {
+	font-family: var(--Ardeco);
+	font-size: 1.5em;
+}
+.user-css .map-box strong {
+	font-family: var(--Ardeco);
+	font-size: 1.7em;
+}
+.user-css .map-box img {
+	margin-bottom: 7px;
+}
+/* Followers panel */
+.user-css .followers-counter {
+	margin-top: 20px;
+}
+.user-css .followers-counter a {
+	color: var(--silverage);
+}
+.user-css .followers-counter .panel {
+	border-radius: 20px;
+	padding: 0;
+}
+.user-css .followers-counter dl {
+    margin-bottom: 0;
+}
+.user-css .followers-counter .btn {
+	background: var(--darkmaple);
+	color: var(--oldmustard);
+}
+/*Followers page */
+.user-css.page-followers .subheading {
+	font-family: var(--Ardeco);
+	font-size: 1em;
+}
+.user-css .follower-box {
+	background: var(--transdarkmaple);
+	box-shadow: inset 0px 0px 10px 2px rgba(0,0,0,0.6);
+}
+
+/* __TOP__ */
+.user-css .backtoworld a,
+.user-css .nav-strip,
+.map-context-user-css .nav-strip {
+	font-family: var(--Ardeco);
+	font-size: .8em;
+	color: var(--oldmustard);
+	background: var(--maple);
+	border: 2px solid var(--patio);
+	border-left-color: var(--darkmaple);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+	transition: all 0.3s;
+}
+.user-css div .backtoworld a:hover {
+	color: var(--silverage);
+	background: var(--darkage);
+	border-color: var(--silverage);
+	border-left-color: var(--darkmaple);
+	padding-left: 40px;
+	padding-right: 40px;
+	box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.3);
+}
+.user-css .nav-strip a {
+	color: var(--oldmustard);
+	font-weight: lighter;
+}
+.user-css .nav-strip .fa {
+	margin-right: 10px;
+	font-size: .9em;
+}
+/* Search Form */
+.user-css .search-form {
+	margin-top: 50px;
+	margin-left: 50px;
+}
+.user-css .search-form .typeahead-input {
+	color: var(--darkmaple);
+	font-size: .8em;
+	font-weight: bolder;
+	background: var(--oldmustard);
+	border: 5px double var(--darkmaple);
+	border-radius: 50px;
+}
+.user-css .search-form .typeahead-input::placeholder {
+	color: var(--darkmaple);
+	font-weight: bolder;
+}
+.user-css .search-form #search-button {
+	background: none;
+	border: none;
+	box-shadow: none;
+	text-shadow: none;
+	font-size: .6em;
+	margin-top: 7px;
+	margin-right: 5px;
+}
+.user-css .typeahead.dropdown-menu {
+	background: var(--maple);
+}
+.user-css .form-group .dropdown-menu {
+    border: none;
+}
+.user-css .typeahead.dropdown-menu li.active .dropdown-item {
+	background: var(--darkmaple);
+}
+.user-css .typeahead.dropdown-menu li {
+	border: 2px solid var(--oldmustard);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+    padding: 0;
+}
+.user-css .typeahead.dropdown-menu li a {
+	color: var(--oldmustard);
+	font-size: 1.2em;
+}
+.user-css .typeahead.dropdown-menu .text-muted {
+	color: var(--silverage);
+}
+/* GM notes */
+.user-css .panel-greatgm,
+.user-css .panel-generic-ggm {
+	font-size: 1em;
+	color: var(--silverage);
+	border-color: var(--oldmustard);
+}
+
+/* __BOTTOM__ */
+.user-css .col-md-7 .btn {
+	color: var(--silverage)!important;
+	background: var(--darkage);
+	border-color: var(--silverage);
+}
+.user-css .col-md-7 .btn:hover {
+	color: var(--silverage)!important;
+	background: var(--darkestage);
+	border-color: var(--silverage);
+}
+.user-css .copyright-attribution {
+	font-size: .8em;
+}
+/* Nav tabs */
+.user-css-extended .extendedbody-tabs {
+    position: initial;
+    margin: 0 -10px;
+}
+.user-css-extended .nav-tabs {
+	background: var(--darkestage);
+	border-bottom: 2px solid var(--silverage);
+    margin-right: -10px;
+    margin-left: -10px;
+    left: 0;
+	top: 0;
+	padding-bottom: 1px;
+}
+.user-css-extended .nav-tabs li {
+    padding: 0;
+}
+.user-css-extended .nav-tabs li a {
+	font-family: var(--Ardeco);
+	font-size: 1em;
+	color: var(--silverage);
+	background: var(--darkage);
+}
+.user-css-extended .nav-tabs li.active a,
+.user-css-extended .nav-tabs li.active a:hover {
+	color: var(--oldmustard);
+	background: var(--darkestage);
+	border-right: 2px solid var(--silverage);
+	text-shadow: 0 4px 2px var(--black);
+}
+.user-css-extended .nav-tabs li a:hover {
+	font-family: var(--Ardeco);
+	font-size: 1em;
+	color: var(--darkestage);
+	background: var(--silverage);
+	text-shadow: 0 2px 2px var(--darkage);
+}
+/* Secrets and notes */
+.user-css-extended .panel-default {
+	padding-top: 0;
+	overflow: hidden;
+	font-family: var(--Ardeco);
+}
+.user-css-extended .panel-default .panel-heading {
+	background: var(--maple);
+	border-bottom: 2px solid var(--darkage);
+	padding-top: 20px;
+}
+.user-css-extended .panel-default .panel-heading .text-muted {
+	color: var(--oldmustard);
+}
+/* Comments */
+.user-css-extended .comment-form {
+	font-family: var(--Ardeco);
+}
+.user-css-extended .comment-form textarea {
+	font-size: 1em;
+	color: var(--silverage);
+	background: var(--transdarkmaple);
+	box-shadow: inset 0px 0px 10px 2px rgba(0,0,0,0.6);
+	border-radius: 5px;
+	transition: all 0.3s;
+}
+.user-css-extended .form-control:focus {
+	background: var(--darkmaple);
+}
+.user-css-extended .comment-form .btn:hover {
+	border: 1px solid var(--cream);
+}
+.user-css-extended .comment-box-content p {
+    font-size: 1em;
+}
+.user-css-extended .comment-box  {
+	font-size: .9em
+}
+.user-css-extended .comment-box .text-danger {
+	color: var(--patio);
+}
+.user-css-extended .comment-box .comment-box-reply {
+    border-top: 2px solid var(--oldmustard);
+}
+.user-css-extended .comment-box-author {
+	font-family: var(--Ardeco);
+    font-size: 1.2em;
+}
+.user-css-extended .comment-box-author small {
+	color: var(--juiced);
+    font-size: 1em;
+}
+.user-css-extended .text-gold {
+    color: var(--silverage)!important;
+    font-size: .7em;
+}
+.user-css-extended .comment-box-avatar .img-avatar {
+	border: 2px solid var(--oldmustard);
+}
+.user-css-extended .comment-box-signature {
+	font-family: var(--Ardeco);
+    border-top: 2px solid var(--oldmustard);
+}
+/* Removing/editing comment borders */
+/* Please note that the comment footer border only shows author-side */
+.user-css-extended .comment-box-date,
+.user-css-extended .comment-footer {
+    border: none;
+}
+
+/* Tags */
+.user-css .label-default,
+.user-css-extended .label-default,
+.user-css .timeline li .label-default {
+	background: var(--darkmaple);
+	border: 2px solid var(--oldmustard);
+	padding: 5px;
+}
+.user-css .label,
+.user-css-extended .label,
+.user-css .timeline li .label,
+.user-css-extended .timeline li .label {
+    display: inline-block;
+}
+
+/* __MAPS__*/
+/* Fullscreen */
+.map-context-user-css {
+	background: var(--darkage);
+}
+.user-css-map-sidebar {
+	background: var(--darkestage);
+	border-right: 3px solid var(--darkage);
+	box-shadow: 0 3px 5px var(--shadow),
+	inset 0 3px 5px var(--shadow);
+	font-size: 23px;
+}
+.user-css-map-sidebar h3 {
+	color: var(--oldmustard);
+	font-size: 1.8em
+}
+.map-context-user-css #sidebarCollapse {
+	color: var(--silverage);
+	background: var(--darkestage);
+	border: 3px solid var(--darkage);
+	border-left-width: 0;
+	box-shadow: 0 3px 5px var(--shadow),
+	inset 0 3px 5px var(--shadow);
+	border-radius: 20px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	padding-right: 15px;
+	transition: all 0.3s;
+}
+.map-context-user-css #sidebarCollapse:hover {
+	padding-right: 25px;
+	background: var(--darkage);
+}
+.map-context-user-css .nav-strip {
+	font-size: 1.4em;
+	border-radius: 20px;
+	border-left-color: var(--patio);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	transition: all 0.3s;
+}
+.map-context-user-css .nav-strip:hover {
+	background: var(--darkage);
+	border-color: var(--silverage);
+	padding-left: 25px;
+	padding-right: 25px;
+}
+.map-context-user-css .nav-strip .text-white {
+    color: var(--oldmustard)!important;
+}
+.map-context-user-css .nav-strip:hover .text-white {
+    color: var(--silverage)!important;
+}
+/* Zoom buttons */
+.leaflet-touch .leaflet-bar {
+	border-radius: 20px;
+	overflow: hidden;
+}
+.user-css .leaflet-control-layers,
+.user-css .leaflet-control-layers-base span,
+.map-context-user-css .leaflet-control-layers,
+.map-context-user-css .leaflet-control-layers-base span {
+    border-color: var(--darkmaple);
+}
+.map-context-user-css .leaflet-control-zoom-in,
+.map-context-user-css .leaflet-control-zoom-out,
+.user-css .leaflet-control-zoom-in,
+.user-css .leaflet-control-zoom-out {
+    border: none;
+}
+.user-css .leaflet-bar a:first-child,
+.map-context-user-css .leaflet-bar a:first-child {
+	color: var(--darkmaple);
+    background: var(--oldmustard);
+}
+.user-css .leaflet-bar a:last-child,
+.map-context-user-css .leaflet-bar a:last-child {
+	color: var(--darkmaple);
+    background: var(--cream);
+}
+.map-context-user-css .leaflet-bar a:hover,
+.user-css .leaflet-bar a:hover {
+	background: var(--silverage);
+    border: none;
+}
+.map-context-user-css .leaflet-bar a.leaflet-disabled,
+.user-css .leaflet-bar a.leaflet-disabled {
+	background: var(--darkmaple);
+    border: none;
+}
+/*Layers*/
+.leaflet-control-layers {
+	background: var(--maple)!important;
+	border: 2px solid var(--oldmustard)!important;
+}
+.leaflet-control-layers-expanded {
+	background: var(--oldmustard)!important;
+	color: var(--silverage)!important;
+}
+.map-context-user-css .legend {
+	font-family: var(--Ardeco);
+	font-size: 1.4em;
+	color: var(--silverage);
+	background: var(--darkestage);
+	border: 3px solid var(--darkage);
+	border-radius: 20px;
+	box-shadow: none;
+}
+/* Popups */
+.map-context-user-css .leaflet-popup-content-wrapper,
+.map-context-user-css .leaflet-popup-tip {
+	font-family: var(--Ardeco);
+	font-size: 1.8em;
+	color: var(--silverage);
+	background: var(--maple);
+	border: 2px solid var(--darkmaple);
+}
+.map-context-user-css .leaflet-popup-content-wrapper h5 {
+	font-family: var(--Ardeco);
+	font-size: 1em;
+	color: var(--silverage);
+}
+.map-context-user-css .leaflet-popup-content-wrapper h2 {
+	font-family: var(--Salon);
+	font-size: 1.2em;
+	color: var(--oldmustard);
+	text-shadow: 0 2px 2px black;
+}
+.map-context-user-css .leaflet-popup-content-wrapper h3 {
+	font-family: var(--Salon);
+	font-size: 1.1em;
+	color: var(--silverage);
+	text-shadow: 0 2px 2px black;
+}
+/* ---Inline Maps--- */
+.user-css-presentation .leaflet-grab {
+	border: 3px solid var(--patio);
+	border-radius: 20px;
+}
+.user-css-presentation .leaflet-touch .leaflet-bar {
+    border: none;
+}
+
+/* __NAVIGATION SIDEBAR__ */
+.user-css-presentation #world-navigation-sidebar {
+    display: block !important;
+	opacity: 1;
+	border: 10px double var(--darkmaple);
+    border-radius: 20px;
+    width: 20%;
+	overflow-x: hidden;
+	box-shadow: 0 0 9px 1px var(--shadow),
+	inset 0 0 13px 1px rgba(0, 0, 0, 0.4);
+    transition: all 1s;
+}
+.user-css-presentation #world-navigation-sidebar[style^=display] {
+    opacity: 0;
+    display: block !important;
+    pointer-events: none;
+}
+/* Button */
+.user-css-presentation .world-navigation-palette-trigger {
+	background: var(--maple);
+	color: var(--oldmustard);
+	font-size: 1.5em;
+    width: 60px;
+    height: 60px;
+	margin: 0px;
+	padding: 5px;
+	padding-top: 9px;
+	border: 3px solid var(--oldmustard);
+	border-left-width: 0;
+	border-radius: 20px;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	transition: all 0.3s;
+}
+.user-css-presentation .world-navigation-palette-trigger:hover{
+	background: var(--darkage);
+	color: var(--silverage);
+	border-color: var(--silverage);
+	width: 80px;
+	padding-left: 20px;
+}
+.user-css-presentation .world-navigation-palette-trigger-active {
+	background: var(--darkestage);
+	color: var(--silverage);
+	border-color: var(--silverage);
+    transition: all .3s;
+}
+.user-css-presentation #world-navigation-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+.user-css-presentation #world-navigation-sidebar::-webkit-scrollbar-track  {
+	background: var(--maple);
+	margin: 5px 0;
+    box-shadow: none;
+}
+.user-css-presentation #world-navigation-sidebar::-webkit-scrollbar-thumb  {
+	background: var(--darkmaple);
+    box-shadow: none;
+}
+
+/* __STAT BLOCKS__ */
+.user-css .statblock {
+	background: var(--maple);
+	border: 3px solid var(--oldmustard);
+	border-radius: 20px;
+	box-shadow: 0 3px 5px var(--shadow),
+		inset 0 3px 5px var(--shadow);
+}
+
+/* __SCROLLBAR__ */
+::-webkit-scrollbar {
+    width: 13px;
+}
+::-webkit-scrollbar-track {
+	background: var(--patio);
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	background: var(--maple);
+    width: 9px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--darkmaple);
+}
+
+/* __SCREEN SCALING__ */
+
+@media only screen and (max-width: 1199px) {
+    .user-css-presentation #world-navigation-sidebar {
+        width: 30%;
+    }
+}
+@media only screen and (max-width: 991px) {
+    .user-css.page,
+    .user-css-extended .page  {
+        overflow: hidden;
+    }
+    .user-css-presentation #world-navigation-sidebar {
+        top: 26%;
+        min-height: 60% !important;
+        width: 100%;
+        left: 25px;
+    }
+}
+@media only screen and (max-width: 425px) {
+    .user-css.page,
+    .user-css-extended .page  {
+        overflow: hidden;
+    }
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __MISC FIXES__ */
+
+/* Map- article view fix */
+.user-css-map-sidebar .statblock {
+	display: contents;
+}
+
+/* Display the contents of a statblock as if it was part of the container => AKA invisibile statblocks */
+.display-contents-statblock, .display-contents-statblock .statblock {
+	display: contents;
+}
+
+/* Shy social remove */
+.article-social-media {
+    display: none;
+}
+
+/* Space after key value pairs - Having no space after them is a pet peeve of Fox's, so she added some */
+.user-css .phrase-value {
+	margin-bottom: var(--box-marg);
+}
+
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __CONTAINERS__ */
+
+/* __ADEMAL GRID COLUMNS__ */
 /*Contain-Grid*/
- @media only screen and (min-width: 960px){
+@media only screen and (min-width: 960px){
     .contain-grid{
         display: grid;
         grid-gap: 20px;
@@ -99,73 +1084,29 @@ KEEP - Ademal's grid column hack - gifted in Discord server
     }
 }
 
-
-/* ----------------------------------
-	CONTAINER CLASSES - commonly used
-------------------------------------- */ 
+/* __SHY CONTAINERS__ */ 
 /* KEEP CLASS (style as you like) - Box to highlight items (The base attributes. ShyRedFox uses other classes to modify this one. Keep this above the modifier classes in the code) */
 .HLBox {
     border-radius: var(--box-radius);
     padding: var(--box-marg);
-    background: var(--whitet);
+    background: var(--darkmaple);
 	margin: var(--box-marg);
-	color: var(--black);
+	color: var(--silverage);
 }
-
-/* KEEP: display the contents of a statblock is if it was part of the container => AKA invisibile statblocks */
-.display-contents-statblock, .display-contents-statblock .statblock {
-  display: contents;
-}
-
 /* KEEP CLASS (style as you like) - subscriber group containers */
 .user-css [class*=subcontain] {
 	display: block;
-	background: var(--Pistachio);
-	color: var(--black);
-	border: 2px dashed var(--white);
+	background: var(--darkmaple);
+	color: var(--silverage)!important;
+	border: 7px double var(--oldmustard);
 	padding: 20px;
 	margin: var(--box-marg);
 	border-radius: var(--box-radius);
 }
-
-/* ----------------------------------
-	GENERAL THEME STYLING
-------------------------------------- */ 
-/* KEEP - The social media icons for shyredfox don't need to be on the pages for this world */
-.article-social-media {
-    display: none;
+.user-css [class*=subcontain] span {
+	color: var(--silverage)!important;
 }
 
-/* space after key value pairs - Having no space after them is a pet peeve of Fox's, so she added some */
-.user-css .phrase-value {
-	margin-bottom: var(--box-marg);
-}
-
-/* Theme changes for until we get an official theme of our own */
-.user-css .statblock {
-	background: var(--ember-dark); /* variable from the World Ember theme */
-}
-
-#world-navigation-sidebar {
-	background: var(--ember-dark-d); /* variable from the World Ember theme */
-}
-
-/* -----------------------------------
-	HOMEPAGE/GLOBAL COPYRIGHT FOOTER
--------------------------------------- */
-/* KEEP: ASC Social media box - stored in GLOBAL COPYRIGHT FOOTER */
-/* NOTE to Timepool - if you can figure out how to make this a sticky and stay at the top - that would be awesome. It might need to be placed somewhere other than the global copyright footer to do this. But if it's on the front page, that's all that really matters */
-.social-media-box {
-	width: 200px;
-	position: fixed; 
-	top: 75px; 
-	right: 50px; 
-	z-index: 2;
-}
-
-/* ----------------------------------
-	CALENDAR CLASSES
-------------------------------------- */
 /* KEEP - boxes for calendar key */
 .cal-color-box {/*box that holds the calendar color key list */
 	display: inline-block; 
@@ -178,6 +1119,8 @@ KEEP - Ademal's grid column hack - gifted in Discord server
 	border-radius: var(--color-box-radius);
 }
 
+
+/* __CALENDAR CONTAINERS__ */
 /* KEEP - Single use but called from containers for calendar key */
 .Raddicchio { background: var(--Raddicchio)}
 .CherryBlossom { background: var(--CherryBlossom)}
@@ -209,84 +1152,145 @@ KEEP - Ademal's grid column hack - gifted in Discord server
 .Graphite{ background: var(--Graphite)}
 .Birch { background: var(--Birch)}
 
+.asclogo img,
+.asclogo2 img {
+	filter: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.6));
+}
 
-/* ------------------------
-	OFFICER PAGE STYLING https://www.worldanvil.com/w/anvilite-streamers-corps/a/asc-officers-article
---------------------------- */
-/* KEEP or REPLACE - officer boxes */
+/* Officer boxes */
 .black-bg { 
-	background: #111; 
-	color: var(--white);
-	border: 1px dotted var(--whitet);
+	background: var(--darkmaple); 
+	color: var(--silverage);
+	border: 2px solid var(--oldmustard);
 }
-
-/* KEEP or REPLACE: to move the text about each officer over a bit from the left */
-.pad-left-30 {
-	padding-left: 30px;
-}
-
-/* KEEP or REPLACE: makes a block out of the Font Awesome icons so we can give them a specific width. FA icons vary in size and this is how I could make the text after them line up */
 .fa-even-out {
 	width: 2em;
 	display: inline-block;
 	text-align: center;
 }
-
-/* KEEP or REPLACE: when I needeed to make a new line, this puts the new line text in line with the other text */
 .newline-even-out {
 	width: 2.1em;
 	display: inline-block;
 }
 
-
-/* ------------------------------------
-	MEMBER PROFILE SHEET TEMPLATE 
-	KEEP or UPDATE - Fox kept them here so they could be updated with the theme. We can move them into the member profile sheet template later if we want. The card/mini profile styling is in the sheet so it's applied wherevever people use it (their author profile, their worlds, etc)
---------------------------------------- */
+/* __MEMBER PROFILE SHEET TEMPLATE__ */
 .main-topic {
 	font-weight: 800;
-	background: #7a0000;
+	background: #22130e98;
 	border-radius: 5px;
 	padding: 3px;
 }
-
 .broadcaster-proile dd {
 	text-indent: 0em; 
 	margin-left: 10px;
 }
-
 .asc-logo {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
-
 .bbox {
 	margin: 14px;
 }
-
 /* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
 strong.phrase-key {
 	font-size: 1.2em;
 	color: var(--yellow-orange);
 }
-
 /* In the sheet templates it didn't work to use .user-css in front of a WA class :( So noting that here */
 .phrase-value {
 	margin-left: 15px;
 }
-
 .profile-col {
 	border: none;
 }
 
-/* ------------------------------------
-	MEMBER PROFILE PAGES
-	KEEP or UPDATE - Fox kept them here so they could be updated with the theme. We can move them into the member profile sheet template later if we want. The card/mini profile styling is in the sheet so it's applied wherevever people use it (their author profile, their worlds, etc)
---------------------------------------- */
+/* __MEMBER PROFILE PAGES__ */
 .user-css .btn-white {
 	background: #eee !important;
 	vertical-align: middle !important;
 }
 
-/* End Member profile pages/sheets code */
+/* KEEP: ASC Social media box - stored in GLOBAL COPYRIGHT FOOTER */
+/* NOTE to Timepool - if you can figure out how to make this a sticky and stay at the top - that would be awesome. It might need to be placed somewhere other than the global copyright footer to do this. But if it's on the front page, that's all that really matters */
+.social-media-box {
+	width: 200px;
+	position: fixed; 
+	top: 75px; 
+	right: 50px; 
+	z-index: 2;
+}
+.social-media-box img {
+	border-width: 2px;
+	box-shadow: 0 2px 5px var(--shadow);
+}
+.social-media-box img:hover {
+	border-color: var(--silverage);
+}
+
+/* Timezone picker */
+#TZ-menu {
+	text-shadow: none;
+}
+
+.tz-list a {
+    text-shadow: none !important;
+}
+
+/* ------------------------------------------------------------------------------------- */
+
+/* __CSS PALETTE__ */
+#hidden-sidebar {
+    background-color: transparent;
+}
+#css-palette-panel {
+    position: fixed !important;
+    right: .1px;
+    width: 17% !important;
+    border: 2px solid #645656;
+    border-top-width: 0;
+    border-right-width: 0;
+    border-bottom-left-radius: 20px;
+}
+#css-palette-panel textarea.form-control {
+    height: 0;
+}
+#css-palette-panel .form-group {
+    background: #cc6414;
+    color: #fff4a3;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+#css-palette-panel textarea{
+    min-height: 55vh !important;
+}
+#css-palette-save {
+    color: #fff4a3!important;
+    background: #cc6414;
+    font-weight: bold;
+    border: 3px solid #346c77;
+    border-radius: 20px;
+    transition: all 0.1s;
+}
+#css-palette-save:hover {
+    color: #346c77!important;
+    background: #fff4a3;
+}
+/* Button */
+.hidden-xs {
+background: transparent;
+}
+.hidden-xs .fa-palette {
+    background: white;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 5px;
+    top: 200px !important;
+    border: 2px solid #645656;
+    border-right-width: 0px;
+    margin-left: -33px;
+    position: fixed !important;
+    z-index: 0;
+}
