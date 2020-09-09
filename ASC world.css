@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.9
+@version        1.0.10
 @description    CSS for the ASC Network Site
 @author         Timepool (Garrett Lewis)
 
@@ -15,6 +15,7 @@
 1.0.7 - 08/06/2020 - organized and commented for Timepool, so it's easy for him to create our new theme
 1.0.8 - 08/08/2020 - Added fixes for map slide out for articles becuase Member profiles had black text on dark background
 1.0.9 - New theme by Timepool + minor menu fix (took out shadow ib timezone menus list items - by ShyRedFox)
+1.1.0 - ShyRedfox - added padding and took off the border for Google Calendar frames
 
 KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
 ==/UserStyle== */
@@ -1293,4 +1294,10 @@ background: transparent;
     margin-left: -33px;
     position: fixed !important;
     z-index: 0;
+}
+
+/* -------------- Google Calendar Iframes ------------------ */
+.user-css .template-generic-iframe iframe[src*=calendar\.google\.com]{
+    padding: 15px;
+	border: none;
 }

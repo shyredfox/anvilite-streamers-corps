@@ -2,95 +2,114 @@
 	{% if variables.url is defined %}
 
 	<!-- DISPLAY THE NETWORK CALENDAR -->
-	<h3>The ASC Network Calendar is in UTC</h3>
-     
+     <!--	<h3>The ASC Network Calendar is in UTC</h3>
+
        <blockquote>
 *If you see "Events from one or more calendars could not be shown here because you do not have the permission to view them." - someone has set their calendar to private. We can try to hunt it down, but we can't control their calendars.<br><br>
-*If you see the calendar showing up with the wrong colors, from what I can tell this happens for some calendars if you block 3rd party cookies. I can't control that or override it with google calendar settings. And sometimes we get it set wrong because the color display and color setting are on opposite sides. Easy to pick the wrong one. Feel free to let us know. If it's set right on our end, I can't fix it. But if it is wrong on our end, we'll fix it. --ShyRedFox </blockquote>
-	<iframe src="{{ variables.url | raw }}" style="border: 0" width="100%" height="700" frameborder="0" scrolling="no"></iframe>
-
-	<!-- now split it by 'ctz=Etc%2FGMT' and piece back together -->
+*If you see the calendar showing up with the wrong colors, from what I can tell this happens for some calendars if you block 3rd party cookies. I can't control that or override it with google calendar settings. And sometimes we get it set wrong because the color display and color setting are on opposite sides. Easy to pick the wrong one. Feel free to let us know. If it's set right on our end, I can't fix it. But if it is wrong on our end, we'll fix it. --ShyRedFox </blockquote> -->
+	<iframe src="{{ variables.url | raw }}" width="100%" height="700" frameborder="0" scrolling="no"></iframe>
+	<!-- now split it by 'ctz=' and 'src=' piece back together -->
 	<!-- EXTRACT THE BASE PART OF THE STRING FROM THE CALENDAR URL -->
-	{% set url_minus_tz = variables.url|split('Etc%2FGMT') %}
+	{% set url_minus_tz = variables.url|split('ctz=') %}
+	<!--Printing url_minus_tz: {{ url_minus_tz[0] | raw }} <br>-->
+	{% set url_from_src_on = variables.url|split('src=') %}
+	<!--Printing url_from_src_on: {{ url_from_src_on | raw }} <br>-->
+	<!--Pinting array length: {{ url_from_src_on | length }} <br>-->
+	
+	{% set url_end = "" %}
+	{% set leng = url_from_src_on | length %}
+	
+	{% for item in url_from_src_on %}
+		<!--HERE <br>-->
+		{% if loop.index0 >= 1 %}
+			{% set url_end = url_end~'src='~url_from_src_on[loop.index0] %}
+		{% endif %}
+		<!--counting: {{ loop.index0 }}<br>-->
+	{% endfor %}
+	<!--URL_END: {{ url_end| raw }}<br>
 	<!-- CHANGE THE TIMEZONE TO DISPLAY IN THE URL -->
 	<!-- UTC -->
-	{% set utc = url_minus_tz[0]~'Etc%2FGMT'~url_minus_tz[1] %}
+	{% set utc = url_minus_tz[0]~'ctz=Etc%2FGMT&'~url_end %}
+	<!-- utc: {{ utc| raw }}<br> -->
 	<!-- UTC+1 -->
-	{% set utc_p1 = url_minus_tz[0]~'Etc%2FGMT%2D1' %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (as minus) in the URL creation #}
+	{% set utc_p1 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D1&'~url_end %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2d (as minus) in the URL creation #}
+	<!--utc_p1: {{ utc_p1| raw }}<br>-->
 	<!-- UTC+2 -->
-	{% set utc_p2 = url_minus_tz[0]~'Etc%2FGMT%2D2'~url_minus_tz[1] %} 
+	{% set utc_p2 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D2&'~url_end %} 
+<!--Printing utc_p2: {{ utc_p2| raw }} <br>-->
 	<!-- UTC+3 -->
-	{% set utc_p3 = url_minus_tz[0]~'Etc%2FGMT%2D3'~url_minus_tz[1] %} 
+	{% set utc_p3 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D3&'~url_end %} 
 	<!-- UTC+4 -->
-	{% set utc_p4 = url_minus_tz[0]~'Etc%2FGMT%2D4'~url_minus_tz[1] %} 
+	{% set utc_p4 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D4&'~url_end %} 
 	<!-- UTC+5 -->
-	{% set utc_p5 = url_minus_tz[0]~'Etc%2FGMT%2D5'~url_minus_tz[1] %} 
+	{% set utc_p5 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D5&'~url_end %} 
 	<!-- UTC+6 -->
-	{% set utc_p6 = url_minus_tz[0]~'Etc%2FGMT%2D6'~url_minus_tz[1] %} 
+	{% set utc_p6 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D6&'~url_end %} 
 	<!-- UTC+7 -->
-	{% set utc_p7 = url_minus_tz[0]~'Etc%2FGMT%2D7'~url_minus_tz[1] %} 
+	{% set utc_p7 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D7&'~url_end %} 
 	<!-- UTC+8 -->
-	{% set utc_p8 = url_minus_tz[0]~'Etc%2FGMT%2D8'~url_minus_tz[1] %} 
+	{% set utc_p8 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D8&'~url_end %} 
 	<!-- UTC+9 -->
-	{% set utc_p9 = url_minus_tz[0]~'Etc%2FGMT%2D9'~url_minus_tz[1] %} 
+	{% set utc_p9 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D9&'~url_end %} 
 	<!-- UTC+10 -->
-	{% set utc_p10 = url_minus_tz[0]~'Etc%2FGMT%2D10'~url_minus_tz[1] %} 
+	{% set utc_p10 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D10&'~url_end %} 
 	<!-- UTC+11 -->
-	{% set utc_p11 = url_minus_tz[0]~'Etc%2FGMT%2D11'~url_minus_tz[1] %} 
+	{% set utc_p11 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D11&'~url_end %} 
 	<!-- UTC+12 -->
-	{% set utc_p12 = url_minus_tz[0]~'Etc%2FGMT%2D12'~url_minus_tz[1] %} 
+	{% set utc_p12 = url_minus_tz[0]~'ctz=Etc%2FGMT%2D12&'~url_end %} 
+	<!-- Printing +12: {{ utc_p12| raw }} <br> -->
 	<!-- UTC-1 -->
-	{% set utc_m1 = url_minus_tz[0]~'Etc%2FGMT%2B1'~url_minus_tz[1] %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #}
+	{% set utc_m1 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B1&'~url_end %} {# Google seems to have GMT+1 and GMT-1 confused, so I am using %2B (minus) in the URL creation #} 
 	<!-- UTC-2 -->
-	{% set utc_m2 = url_minus_tz[0]~'Etc%2FGMT%2B2'~url_minus_tz[1] %} 
+	{% set utc_m2 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B2&'~url_end %} 
 	<!-- UTC-3 -->
-	{% set utc_m3 = url_minus_tz[0]~'Etc%2FGMT%2B3'~url_minus_tz[1] %} 
+	{% set utc_m3 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B3&'~url_end %} 
 	<!-- UTC-4 -->
-	{% set utc_m4 = url_minus_tz[0]~'Etc%2FGMT%2B4'~url_minus_tz[1] %} 
+	{% set utc_m4 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B4&'~url_end %} 
 	<!-- UTC-5 -->
-	{% set utc_m5 = url_minus_tz[0]~'Etc%2FGMT%2B5'~url_minus_tz[1] %} 
+	{% set utc_m5 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B5&'~url_end %}
 	<!-- UTC-6 -->
-	{% set utc_m6 = url_minus_tz[0]~'Etc%2FGMT%2B6'~url_minus_tz[1] %} 
+	{% set utc_m6 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B6&'~url_end %} 
 	<!-- UTC-7 -->
-	{% set utc_m7 = url_minus_tz[0]~'Etc%2FGMT%2B7'~url_minus_tz[1] %} 
+	{% set utc_m7 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B7&'~url_end %} 
 	<!-- UTC-8 -->
-	{% set utc_m8 = url_minus_tz[0]~'Etc%2FGMT%2B8'~url_minus_tz[1] %} 
+	{% set utc_m8 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B8&'~url_end %} 
 	<!-- UTC-9 -->
-	{% set utc_m9 = url_minus_tz[0]~'Etc%2FGMT%2B9'~url_minus_tz[1] %}
+	{% set utc_m9 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B9&'~url_end %}
 	<!-- UTC-10 -->
-	{% set utc_m10 = url_minus_tz[0]~'Etc%2FGMT%2B10'~url_minus_tz[1] %}
+	{% set utc_m10 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B10&'~url_end %}
 	<!-- UTC-11 -->
-	{% set utc_m11 = url_minus_tz[0]~'Etc%2FGMT%2B11'~url_minus_tz[1] %}
+	{% set utc_m11 = url_minus_tz[0]~'ctz=Etc%2FGMT%2B11&'~url_end %}
 	<br><br>
 	<!-- DISPLAY LINKS TO THE CALENDAR BY TIMEZONES -->
 	<h4>Would you like the calendar displayed in a different timezone?</h4>
-	<div class="dropdown">
+	<div class="dropdown tz-list">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="TZ-menu">Pick Your Timezone <span class="caret"></span></button>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="TZ-menu">
-			<li role="presentation"><a role="menuitem" href="{{ utc_p12 | raw }}&amp;mode=WEEK" target="_blank">UTC+12</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p11 | raw }}&amp;mode=WEEK" target="_blank">UTC+11</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p10 | raw }}&amp;mode=WEEK" target="_blank">UTC+10</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p9 | raw }}&amp;mode=WEEK" target="_blank">UTC+9</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p8 | raw }}&amp;mode=WEEK" target="_blank">UTC+8</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p7 | raw }}&amp;mode=WEEK" target="_blank">UTC+7</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p6 | raw }}&amp;mode=WEEK" target="_blank">UTC+6</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p5 | raw }}&amp;mode=WEEK" target="_blank">UTC+5</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p4 | raw }}&amp;mode=WEEK" target="_blank">UTC+4</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p3 | raw }}&amp;mode=WEEK" target="_blank">UTC+3</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p2 | raw }}&amp;mode=WEEK" target="_blank">UTC+2</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_p1 | raw }}&amp;mode=WEEK" target="_blank">UTC+1</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc | raw }}&amp;mode=WEEK" target="_blank">UTC</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m1 | raw }}&amp;mode=WEEK" target="_blank">UTC-1</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m2 | raw }}&amp;mode=WEEK" target="_blank">UTC-2</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m3 | raw }}&amp;mode=WEEK" target="_blank">UTC-3</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m4 | raw }}&amp;mode=WEEK" target="_blank">UTC-4</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m5 | raw }}&amp;mode=WEEK" target="_blank">UTC-5</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m6 | raw }}&amp;mode=WEEK" target="_blank">UTC-6</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m7 | raw }}&amp;mode=WEEK" target="_blank">UTC-7</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m8 | raw }}&amp;mode=WEEK" target="_blank">UTC-8</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m9 | raw }}&amp;mode=WEEK" target="_blank">UTC-9</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m10 | raw }}&amp;mode=WEEK" target="_blank">UTC-10</a></li>
-			<li role="presentation"><a role="menuitem" href="{{ utc_m11 | raw }}&amp;mode=WEEK" target="_blank">UTC-11</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p12 | raw }}" target="_blank">UTC+12</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p11 | raw }}" target="_blank">UTC+11</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p10 | raw }}" target="_blank">UTC+10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p9 | raw }}" target="_blank">UTC+9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p8 | raw }}" target="_blank">UTC+8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p7 | raw }}" target="_blank">UTC+7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p6 | raw }}" target="_blank">UTC+6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p5 | raw }}" target="_blank">UTC+5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p4 | raw }}" target="_blank">UTC+4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p3 | raw }}" target="_blank">UTC+3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p2 | raw }}" target="_blank">UTC+2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_p1 | raw }}" target="_blank">UTC+1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc | raw }}" target="_blank">UTC</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m1 | raw }}" target="_blank">UTC-1</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m2 | raw }}" target="_blank">UTC-2</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m3 | raw }}" target="_blank">UTC-3</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m4 | raw }}" target="_blank">UTC-4</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m5 | raw }}" target="_blank">UTC-5</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m6 | raw }}" target="_blank">UTC-6</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m7 | raw }}" target="_blank">UTC-7</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m8 | raw }}" target="_blank">UTC-8</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m9 | raw }}" target="_blank">UTC-9</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m10 | raw }}" target="_blank">UTC-10</a></li>
+			<li role="presentation"><a role="menuitem" href="{{ utc_m11 | raw }}" target="_blank">UTC-11</a></li>
 		</ul>
 	</div> <!-- END DROPDOWN -->
 	<p>Click on the dropdown menu and click your timezone to open a new tab with a calendar converted to that timezone. 
