@@ -1,0 +1,12 @@
+/* ==UserStyle==
+@name           GoT Event hide "Strengths"
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    A new userstyle
+@author         Me
+==/UserStyle== */
+
+.user-css .belligerent [class*=panel-bod] .row:nth-child(2) h4 {
+	/* color:red !important;  */
+	display: none;
+}
