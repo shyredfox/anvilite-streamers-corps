@@ -1,0 +1,175 @@
+Content:
+
+[img:1488384|center]
+
+The Game of Tomes is a new competition for writers who participate in [url:http://www.nanowrimo.org]National Novel Writing Month[/url] and are regular Twitch viewers, or who enjoy participating in virtual write-ins with a competitive (but friendly!) spirit. Although it was designed by writer Twitch streamers who are part of the World Anvil community and the Anvilite Streamer Corps, it is open to any and all participants in NaNoWriMo.
+
+[aloud]Would you rather listen to me go over this article on stream, offering explanations as I go? Scroll down to the bottom of the article, before Belligerents.[/aloud]
+[hr]
+
+START DATE
+November 1, 2020
+END DATE
+November 30, 2020
+
+
+PRELUDE
+2020 was a disastrous year on the third planet in the Sol system. As if the widespread political and social turmoil, and the vicissitudes of climate change weren't enough, a global pandemic known as Covid-19, a Coronavirus infection, forced most of the world into lockdown conditions. In response to the health risks of gathering in public spaces, NaNoWriMo headquarters informed their Municipal Liaisons, including @[Sable Aradia](article:8468c1df-9eab-4f43-9c47-d94b425d9c53), that they would not be authorizing any in-person events for @[NaNoWriMo](article:708f34fe-0b63-424b-9542-4893fa23fcb0) 2020.
+
+​
+Fortunately, the ASC Wrimos had the benefit of the Anvilite community to gather with online. Inspired by the #NaNoHouseCup, which is masterminded and organized by [url:http://twitter.com/elaynamae]Elayna Mae[/url], a number of ASC writers who participate in @[NaNoWriMo](article:708f34fe-0b63-424b-9542-4893fa23fcb0) agreed to pit their word counts against one another in a month-long winner-take-all battle for the Iron Tome. @[Sable Aradia](article:8468c1df-9eab-4f43-9c47-d94b425d9c53) of House Lapin laid the challenge, and six ASC Wrimos accepted her invitation.
+
+[hr]
+
+DEPLOYMENT
+The Game of Tomes is open to anyone doing NaNoWriMo who joins in participating streams and redeems their word counts, whether they are officially registered on the NaNoWriMo site or not.
+
+Each Wrimo assigns themselves to one of the great houses, depending upon inclination and habits as a writer, or just personal whim. Their word counts in the streams of participating streamers are counted towards the overall totals of their chosen house by selecting the appropriate channel point reward, marked by their house's banner as a Twitch emote, and entering their word count in the space one might typically type a "highlighted message".
+
+[center][youtube:https://youtu.be/mcJF9qEFI04][/center]
+
+Each individual writer might:
+[ol]
+[li]Swear their undying loyalty to a single house, if and until their house falls[/li]
+[li]Form or join a lesser house, which then gives its loyalty in turn to the banner of one of the great houses[/li]
+[li]Give their loyalty to one house, then later change their mind; and this may be done repeatedly[/li]
+[li]Function as a mercenary, either by joining and leaving houses at a whim, or by trying to win concessions from one of the other lesser or greater houses by offering their support[/li]
+[/ol]
+
+Participating Wrimos are considered to be part of the last house they served at the turn of the deadline, and will live or die with that house.
+
+[h4]Lesser Houses[/h4]
+Participating Wrimos who do not lead a greater house may choose to form a lesser house instead. This includes both streamers and non-streamers. Lesser houses must REGISTER, [url:https://docs.google.com/forms/d/e/1FAIpQLSdKlot84RZ0LvuDoaFEnOojJ_ytS81oQuzIz6Df-0FFIkTOug/viewform]using this form[/url], prior to November 1st. That lesser house must "bend the knee" to one of the greater houses, on a temporary or extended basis. This must be done publicly on the Twitch stream of the house leader one is bending the knee to.
+
+A lesser house may change its allegiance at the beginning of each new elimination period -- and [i]only[/i] at the beginning of each elimination period -- if desired. This must be indicated by a public bending of the knee, as above.
+
+A lesser house may only consist of one person. However, that one person, upon declaring themselves a house, is thereby bound to the rules of lesser houses. They may not change their minds and act as individuals later in the competition.
+
+[center][youtube:https://youtu.be/ye_-BMZH86Y][/center]
+
+[h4]The Undead Horde[/h4]
+The Undead Horde begins with only the Night Monarch (leader of their "house"), but swells their ranks by taking a random third of each fallen house's strength, as described in Conditions. No one else may start as Undead.
+[hr]
+
+BATTLEFIELD
+The battlefield for this conflict is in the Twitch write-in streams of participating streamers. Only the word count totals from live participating write-ins count towards the overall house totals. Individual word count totals acquired off-stream, or in non-participating write-ins, are not counted. Neither are word counts acquired by watching VODs after the streams have aired.
+[hr]
+
+CONDITIONS
+[h3]Attrition[/h3]
+At the end of every five days, as calculated in UTC, the overall scores of the houses are tallied. The great house with the smallest overall word count is officially eliminated from the competition. This result will be announced on stream. In 2020, this will be on [url:http://www.twitch.tv/sablearadia]Erin Righ's stream[/url] "Write with Erin," which is the first participating stream to air after the turn of the day in UTC.
+
+[aloud]
+[ul]
+[li][b]November 5:[/b] 6th house eliminated[/li]
+[li][b]November 10th:[/b] 5th house eliminated[/li]
+[li][b]November 15th:[/b] 4th house eliminated[/li]
+[li][b]November 20th:[/b] 3rd house eliminated[/li]
+[li][b]November 25th:[/b] 2nd house eliminated[/li]
+[li][b]November 30th:[/b] The Final Battle - last surviving house vs. the Undead Horde![/li]
+[/ul]
+[/aloud]
+
+The Final Battle, unlike the other elimination periods, will not be tallied until NaNoWriMo has ended for ALL time zones.
+
+[h3]Undead[/h3]
+The names of the members of the eliminated house, and their bannermen, will be entered into a [url:https://miniwebtool.com/random-name-picker/]random name selector[/url]. One third of them will be drawn randomly to be drafted into the ranks of the Undead Horde. If they are drafted, they must represent the Horde for the remainder of the Game of Tomes. "Mercenaries" who shift their allegiances will be counted as being part of [i]the last house they joined[/i] before the end of the elimination period.
+
+The members and bannermen of the eliminated house who survive the Undead Horde may then choose one of the surviving houses to represent instead.
+
+[h3]Bending the Knee[/h3]
+If a house leader -- whether they lead a lesser or a greater house -- survives the Horde, they must then appear on the stream of the leader of the new house they wish to serve to "bend the knee." This can be done with a live appearance, a chat conversation, the use of emojis, or any other method as appropriate to the stream and streamer. It is assumed that their house members will change their allegiance to the new house, but they are under no obligation to do so.
+
+A leader of a great house whose house falls may no longer display their original house banner on their streams, as their house is considered to have been destroyed. The leaders of lesser houses are not bound by this restriction. However, if the leader of a lesser house becomes part of the Undead Horde, their house is considered to be destroyed, and they must also take down their banner, and not display it on stream again for the duration of the Game.
+
+[h3]Responsibilities of House Leaders[/h3]
+House leaders agree to tally the word count totals of their houses, and the Twitch names of the members of their house when eliminated, and report this information as detailed in The Engagement.
+ 
+The house leaders may not reveal the current totals at any time in public, on stream, Discord, or any form of social media, which allows "mercenary" play. The only time in which total word counts will be revealed is on the stream in which the next elimination is announced.
+
+Whether a house leader is the head of a major or minor house, the role of a house leader is to inspire and encourage their bannermen. This is all about fun and about helping each other to succeed. Lead by example, be there for your bannermen, and use positive reinforcement to make NaNoWriMo a success for them, and for you.
+[hr]
+
+ENGAGEMENT
+Any Twitch Affiliate Wrimo may host the Game of Tomes on their streams, and participate in the competition themselves. Please [url:https://docs.google.com/forms/d/e/1FAIpQLSdKlot84RZ0LvuDoaFEnOojJ_ytS81oQuzIz6Df-0FFIkTOug/viewform]REGISTER using this form[/url] prior to November 1st. Streamers who wish to participate will find the necessary info and resources here:
+
+[articleblock:e94b4d2a-8f3b-4d77-a9e6-429e275f0e25]
+[articleblock:ec80a23a-2a92-45d4-871a-8f3b5e8d68cd]
+
+[aloud][ul]
+[li]Great house leaders should report the total word counts accumulated in their streams using [url:https://docs.google.com/forms/d/1ukEb6m8gPSLd89Ktq1F9ThnxAWuOlBRqXt-KwRLBIk4/viewform]this form[/url].[/li]
+[li]Other streamers, whether they lead a lesser house or not, should report total word counts from their streams using [url:https://docs.google.com/forms/d/e/1FAIpQLSfXQsyiBxg890KjvjI4IxYmA_2cWNaAXz4IjrBM5dqy206Uhw/closedform]this form[/url]. (Note that the form will not be accessible until the start of the Game.)[/li]
+[li]When reporting results for a minor house, ONLY add the total to the field for the minor house -- DO NOT enter those totals in the field for the major house they have given their fealty to! This will be tallied automatically.[/li]
+[/ul][/aloud]
+
+Included in the reporting forms is a link to upload screenshots of the channel point Rewards Queue, which can be accessed from the channel points rewards page, as instructed in the above article. The results will be tallied in a spreadsheet.
+
+If a minor house leader is not a Twitch Affiliate, or is not a streamer, they will only be able to count the words accumulated in other participating streams. Our system doesn't work otherwise. However, this is a very supportive community. Announce that you'd like to reach Affiliate so that you can help organize the Game of Tomes, and let one of the great house leaders know, and we're sure it won't take long!
+
+[container: contain-grid contain-grid-col-1 statblock] 
+[h3]Reporting for Lesser Houses Lead by Streamers[/h3]
+[ol]
+[li]Ideally, it would be easiest if a lesser house decides to directly report their results as if they were part of the great house they have bent the knee to. Since the text field in which word counts are submitted during the stream can contain any text, they may also keep track of their lesser house totals separately by typing the name of the lesser house in the text field, long with their word counts for the sprint (ie. "301 Sauropoda," "205 Kitsune.")[/li]
+
+[li]If, however, a lesser house leader wishes to create a channel point reward for their own house on their own channel, they agree to keep track of which of the greater houses those points will be counted towards, and to indicate this on the screenshot reporting graphic. They also agree to keep track of, and communicate to the great house leaders, which participants are part of their house. If mistakes are made, unattached word counts will simply not be counted, and unattached names are automatically submitted to the random name picker for possible draft into the Undead Horde.[/li]
+[/ol]
+[/container]
+
+[h3]Remember, this is a Game[/h3]
+Although this event is designed to get the competitive juices flowing to inspire greater word counts, it is meant to be a [i]friendly[/i] competition. There are no real stakes involved. There are no prizes or punishments for success or failure. Our hope is that participants will encourage and support one another, and any rivalries will be all in good fun. Put simply, anyone being a jerk may be banned from participating in the event by a consensus of the leaders of the great houses, who are also the event organizers.
+[hr]
+
+SECTIONS:
+SIDEBAR: TOP
+[articletoc]
+
+SIDEBAR: BOTTOM
+[center][h1]Launch Stream[/h1][/center]
+[aloud]If any of this is confusing, maybe watching the launch stream will help!
+
+[youtube:https://youtu.be/AhVOh-ej5sU]
+
+[ul]
+[li]What is NaNoWriMo? (8:25) [/li]
+[li]Why people do it and NaNo success tips (11:10) [/li]
+[li]Pantsers, Plotters, and Plantsers (32:28) [/li]
+[li]Video: The Houses (35:27) [/li]
+[li]Acknowledgements, shout-outs, intros to house leaders (41.01) [/li]
+[li]Basic rules (45:04) [/li]
+[li]Channel point system setup & reporting (51:53) [/li]
+[li]How to participate (56:00) [/li]
+[li]ASC NaNoWriMo event calendar (56:55) [/li]
+[li]How to get involved as a streamer (58:45 [/li]
+[li]How to represent your house on any participating stream (1:00:38) [/li]
+[li]Changing loyalties (1:01:07) [/li]
+[li]More on getting involved as a streamer (1:02:06) [/li]
+[li]Lesser houses (1:04:15) [/li]
+[li]More on adding your word count (1:09:00) [/li]
+[li]Banners for lesser houses (1:11:43) [/li]
+[/ul][/aloud]
+
+[center][h1]Leaders of the Great Houses[/h1][/center]
+[aloud]The founders of each house are:
+[ul]
+[li] @[Coffee Quills](article:d3e07149-49bd-426f-9044-66d92a6901b1) (House Mollusca, Japan) [/li]
+[li] @[Cryssalia](article:0a0a8926-74f5-4c64-9e42-621d863d6aa2) (House Avis, Malaysia) [/li]
+[li] @[DaniAdventures](article:f27e8edc-1d71-4ab8-9267-a39b2391cf31)  (House Apis, United States) [/li]
+[li] @[Darth Nikolas](article:7bdd7e67-71e9-41fa-bb8a-0329a853ba9b) (House Meles, United States) [/li]
+[li] @[Sable Aradia](article:8468c1df-9eab-4f43-9c47-d94b425d9c53) (House Lapin, Canada) [/li]
+[li] @[Siobhan the Writer - Belvarn](article:2ff606dd-2816-496f-9f4e-1000fbf1112a) (House Chiroptera, Canada) [/li]
+[/ul]
+
+The first Night Monarch (leader of the Undead Horde) is Erin Righ (Canada)[/aloud]
+[img:1488048]
+[img:1488061]
+[img:1488078]
+[img:1488082]
+[img:1488075]
+[img:1488035]
+[img:1485200]
+
+
+[center][h1]ASC NaNoWriMo Event Calendar[/h1][/center]
+[articleblock:708f34fe-0b63-424b-9542-4893fa23fcb0]
+
+[quote]All the Twitch will be your enemy, Prince with a Thousand Enemies, and whenever they catch you, they will kill you. But first they must catch you, Writer, Reader, Word walker, prince with the swift Emote. Be cunning and full of tricks and your people shall never be destroyed.|SecondhandSamurai of House Lapin, with apologies to Richard Adams[/quote]
