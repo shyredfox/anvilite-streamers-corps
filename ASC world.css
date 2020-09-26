@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.10
+@version        1.0.1
 @description    CSS for the ASC Network Site
 @author         Timepool (Garrett Lewis)
 
@@ -16,6 +16,7 @@
 1.0.8 - 08/08/2020 - Added fixes for map slide out for articles becuase Member profiles had black text on dark background
 1.0.9 - New theme by Timepool + minor menu fix (took out shadow ib timezone menus list items - by ShyRedFox)
 1.1.0 - ShyRedfox - added padding and took off the border for Google Calendar frames
+1.1.1 - ShyRedFox - added styling for the [usercards] to be readable and not take over the whole screen. (Timepool will probably tweak it to be prettier.)
 
 KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
 ==/UserStyle== */
@@ -78,6 +79,10 @@ https://www.worldanvil.com/author/shyredfox
 	--black: #222;
 	--white: #ddd;
 	--whitet: #dddddd90;
+	
+	/* usercard vars */
+	--uc-font: Ubuntu;
+	--uc-font-size: 16px;
 
 	/* Timepool variables */
 	--CovGarden: CovGarden;
@@ -139,6 +144,22 @@ https://www.worldanvil.com/author/shyredfox
     font-style: normal;
     font-weight: 400;
     src: url(https://rawcdn.githack.com/Timespool/Fonts/3fba20582d3b3ade68ad3721a172a9cb59cb08e9/Ardeco.ttf);
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKcQ72j00.woff2);
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v15/4iCs6KVjbNBYlgoKfw72.woff2);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 .user-css,
@@ -1300,4 +1321,48 @@ background: transparent;
 .user-css .template-generic-iframe iframe[src*=calendar\.google\.com]{
     padding: 15px;
 	border: none;
+}
+
+/* -------------- User Cards ---------------------- */
+.user-css .usercard {
+	background-color: transparent;
+	font-family: var(--uc-font);
+	text-shadow: none;
+	color: white;
+	font-size: var(--uc-font-size);
+	font-weight: 300;
+	line-height: 1em;
+}
+
+.user-css a.usercard-link {
+	font-family: var(--uc-font);
+	text-shadow: none;
+	color: var(--oldmustard);
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+.user-css a.usercard-link:hover {
+	color: var(--juiced);
+}
+
+.user-css h4.header-title {
+	font-family: var(--uc-font);
+	text-shadow: none;
+	color: var(--oldmustard);
+	font-size: 14px;
+	line-height: 1em !important;
+	margin-top: 10px;
+}
+
+.user-css .usercard-avatar {
+	border-radius: 50%;
+}
+
+.user-css .usercard-social-media i{
+	font-size: 1em;
+}
+
+.user-css .usercard-signature {
+	margin-top: 5px;
 }
