@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Anvilite Streamers Corps
 @namespace      github.com/openstyles/stylus
-@version        1.0.1
+@version        1.1.2
 @description    CSS for the ASC Network Site
 @author         Timepool (Garrett Lewis)
 
@@ -17,6 +17,7 @@
 1.0.9 - New theme by Timepool + minor menu fix (took out shadow ib timezone menus list items - by ShyRedFox)
 1.1.0 - ShyRedfox - added padding and took off the border for Google Calendar frames
 1.1.1 - ShyRedFox - added styling for the [usercards] to be readable and not take over the whole screen. (Timepool will probably tweak it to be prettier.)
+1.1.2 - ShyRedFox removed the shadow on links in the new tables so they are readable
 
 KEEP: PLEASE LEAVE THIS UserStyle comment area at the top so it works with the Stylus development extension
 ==/UserStyle== */
@@ -273,6 +274,12 @@ https://www.worldanvil.com/author/shyredfox
 	text-decoration: none;
 	text-shadow: 0 4px 2px black;
 }
+
+/* took link shadow off the new tables so they are readable */
+.user-css .thales-cell .thales-cell-link a, .user-css .thales-cell .thales-cell-link a:hover {
+    text-shadow: none;
+}
+
 /* Tooltips */
 .user-css .tooltip.top .tooltip-arrow,
 .user-css-extended .tooltip.top .tooltip-arrow,
@@ -1229,7 +1236,7 @@ strong.phrase-key {
 
 /* __MEMBER PROFILE PAGES__ */
 .user-css .btn-white {
-	background: #eee !important;
+	background: transparent !important;
 	vertical-align: middle !important;
 }
 
@@ -1332,6 +1339,7 @@ background: transparent;
 	font-size: var(--uc-font-size);
 	font-weight: 300;
 	line-height: 1em;
+	border: none;
 }
 
 .user-css a.usercard-link {
