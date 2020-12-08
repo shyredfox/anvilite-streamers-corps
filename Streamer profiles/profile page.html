@@ -10,8 +10,8 @@
 		{% endif %}</div>
 		<div class="broadcast-info bbox">
 		{% if variables.broadcasting_info is defined %}
-			<h4>Channel Summary</H4>
-			<dd> {{ variables.broadcasting_info}} </dd>
+			<h4>Channel Summary</h4>
+			{{ variables.broadcasting_info}}
 		{% endif %}</div>
 	</div>
 	<div class="profile-col col-sm-4">
@@ -180,7 +180,7 @@
 	<br><br>
 	<!-- DISPLAY LINKS TO THE CALENDAR BY TIMEZONES -->
 	<h4>Would you like the calendar displayed in a different timezone?</h4>
-	<div class="dropdown">
+	<div class="dropdown tz-list">
 		<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="TZ-menu">Pick Your Timezone <span class="caret"></span></button>
 		<ul class="dropdown-menu" role="menu" aria-labelledby="TZ-menu">
 			<li role="presentation"><a role="menuitem" href="{{ utc_p12|raw }}" target="_blank">UTC+12</a></li>
