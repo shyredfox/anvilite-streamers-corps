@@ -9,10 +9,10 @@
 			<img class="asc-logo" src="https://www.worldanvil.com/uploads/images/fc8efc4e31e686f133e771bdfa0cbe1a.png" alt="ASC 	Network Logo" width="60" height="60" margin-left="auto" margin-right="auto">
 		</div>
 	</div>
-	<div class="broadcast-badge-deets">
+	<div class="row broadcast-badge-deets">
 		{% if variables.broadcasting_info is defined %}
 			<dt>Broadcasting Info</dt>
-			<dd> {{ variables.broadcasting_info}}
+			<div class="broadcast-badge-info">{{ variables.broadcasting_info}}</div>
 		{% endif %}
 		{% if variables.topic_main is defined %}
 			<dt>Topics</dt>
